@@ -1,0 +1,40 @@
+<div class="inicio">
+    <section class="galeria">
+        <img src="../../../assets/images/woman-mod.jpg">
+    </section>
+    <section class="inicioSesion">
+        <div class="login">
+            <h1>Fashion Hunter</h1>
+            <p>La red social en la que tu estilo habla por vos</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-success" id="google-button">
+                            Iniciar Sesion con Google
+                        </button>
+                    </div>
+                </div>
+                <h3> <i class="far fa-circle"></i> </h3>
+            </div>
+
+            <div class="container">
+                <form class="form" method="post">
+                    <input type="text" #username name="username" placeholder="Nombre de Usuario" required>
+                    <br>
+                    <input type="password" #password name="password" placeholder="Password" required>
+                    <br>
+                    <button class="btn btn-success" type="submit" id="login-button" (click)="login()">Iniciar
+                        Sesión</button>
+                </form>
+
+                <h4>¿No tenés cuenta? <a href="#">Crear cuenta</a></h4>
+                    <img src="../../../assets/images/googlePlay.png" id="google">
+                    <img src="../../../assets/images/appleStore.png" id="apple">
+                    <hr/>
+                    <div class="instagram">
+                    <i class="fab fa-instagram"></i><h4> @fashionhunter_arg</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
