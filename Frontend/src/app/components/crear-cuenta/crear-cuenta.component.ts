@@ -19,6 +19,9 @@ export class CrearCuentaComponent implements OnInit {
     userImg: new FormControl(null, [Validators.required]),
   });
 
+  imageFile: any;
+  anImage!: string;
+
   constructor(
     private titleService: Title,
     private httpService: HttpConfigService
@@ -31,19 +34,31 @@ export class CrearCuentaComponent implements OnInit {
 
   // Carga el archivo a subir
   onFileSelected(event: any) {
-    let file = event.target.files[0];
 
-    console.log(file);
+      this.imageFile = { id: "0"};
+      let reader = new FileReader();
+      if (event.target.files && event.target.files.length > 0) {
+        let file = event.target.files[0];
 
-    if (file) {
-      this.crearCuentaForm.value.userImg = file;
-    }
+        if ( (file.type!="image/jpeg") && (file.type!="image/png")   )    {
+          return false;
+        }
+
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          this.anImage = "data:image/png;base64," + reader.result!.toString().split(',')[1];
+          this.crearCuentaForm.value.userImg = this.anImage;
+        };
+
+      }
+      return true;
   }
 
   crearCuenta() {
-    console.log(this.crearCuentaForm);
 
-    const cuenta = JSON.stringify({
+    // console.log(this.crearCuentaForm);
+
+    const cuenta = {
       firstName: this.crearCuentaForm.value.firstName,
       lastName: this.crearCuentaForm.value.lastName,
       username: this.crearCuentaForm.value.username,
@@ -51,12 +66,12 @@ export class CrearCuentaComponent implements OnInit {
       password: this.crearCuentaForm.value.password,
       passwordConfirm: this.crearCuentaForm.value.passwordConfirm,
       userImg: this.crearCuentaForm.value.userImg,
-    });
+    };
 
     console.log(cuenta);
 
     this.httpService
-      .post('http://localhost:3000/api/v1/user/user', cuenta)
+      .post('http://localhost:3000/api/v1/user/user', cuenta, true)
       .subscribe((res) => {
         console.log(res);
       });
