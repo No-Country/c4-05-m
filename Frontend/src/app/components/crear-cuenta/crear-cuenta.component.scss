@@ -1,0 +1,237 @@
+// Header
+.title {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(
+    to right,
+    var(--tertiary-color),
+    var(--other-color-1),
+    var(--secondary-color)
+  );
+  z-index: 1;
+}
+.right {
+  position: absolute;
+  right: 40px;
+  top: 1rem;
+  width: 150px;
+}
+.right p {
+  font-family: var(--secondary-font);
+  font-weight: bold;
+  color: var(--background-color);
+  margin-top: 10px;
+  margin-right: 4px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
+.right small {
+  font-weight: lighter;
+}
+.right img {
+  margin: 0px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.img-rounded {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+}
+h1 {
+  display: inline;
+  margin-top: 0px;
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38.88px;
+  line-height: 5rem;
+  color: var(--primary-color);
+  margin-left: 49.41px;
+}
+
+/* Main Content */
+.container {
+  position: relative;
+  top: 5rem;
+}
+h2 {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.43rem;
+  color: var(--primary-color);
+}
+h3 {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.62rem;
+  line-height: 1.92rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+p {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.81rem;
+  line-height: 0.96rem;
+  color: var(--primary-color);
+}
+input {
+  width: 267px;
+  height: 20px;
+  font-family: var(--secondary-font);
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  color: var(--primary-color);
+}
+.subtitle {
+  text-align: center;
+  padding: 1rem;
+}
+.subtitle h2 {
+  margin-bottom: 0px;
+}
+.subtitle img {
+  display: none;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-container .flex-item {
+  text-align: center;
+  width: 50%;
+}
+.line-right {
+  border-right: 1px solid var(--primary-color);
+}
+.profile-photos {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+}
+.profile-photos .flex-item {
+  width: 88px;
+  height: 88px;
+  margin: 10px;
+  padding: 10px;
+}
+.profile-photos .flex-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.photo-selection {
+  width: 75%;
+  margin: auto;
+}
+.upload-photo button {
+  width: 117.16px;
+  height: 32.4px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  margin-top: 22.5px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.go button {
+  width: 196.02px;
+  height: 37.26px;
+  background: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 4rem;
+  margin-bottom: 6.6rem;
+}
+i.fa-solid {
+  color: var(--primary-color);
+  margin-right: 7px;
+}
+
+/* iPads, Tabletas y dispositivos móviles */
+@media all and (max-width: 768px) {
+  .title {
+    height: auto;
+    text-align: center;
+    background: var(--background-color);
+  }
+  .subtitle {
+    padding: 0px;
+  }
+  .subtitle h2 {
+    margin-bottom: 0px;
+  }
+  .subtitle div {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+  .subtitle img {
+    cursor: pointer;
+    display: inline;
+    width: 104px;
+    height: 104px;
+    border-radius: 100%;
+    border: 2px solid var(--primary-color);
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 63px;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 0px;
+  }
+  h1,
+  h2,
+  h3 {
+    white-space: nowrap;
+  }
+  h3:first-child {
+    display: none;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+  .flex-container .flex-item {
+    width: 100%;
+  }
+  .line-right {
+    border-right: 0px;
+  }
+  .flex-item:nth-child(2) {
+    display: none;
+  }
+  .go {
+    height: 167px;
+  }
+  .go button {
+    margin-bottom: 65px;
+    margin-top: 65px;
+    cursor: pointer;
+  }
+}
