@@ -11,13 +11,59 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(202deg, #f08570 12%, #edb0b6 25%, #bd2da8 39%, #ec46a1 54%, #e6b9ba 71%, #f08570 88%);
-  width: 100%;
+  width: 50%;
 }
 
-img {
-  width: 55%;
+.slider {
+  width: 71%;
+  overflow: hidden;
 }
 
+.slider ul {
+  display: flex;
+  text-align: center;
+  padding: 0;
+  width: 500%;
+  animation: cambio 20s infinite alternate;
+}
+
+.slider li {
+  list-style: none;
+  width: 80%;
+}
+
+.slider img {
+  position: relative;
+  width: 30em;
+  height: 36em;
+}
+
+@keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
 .inicioSesion {
   display: flex;
   font-family: "Source Sans Pro", sans-serif;
@@ -64,6 +110,7 @@ h3::after {
 input {
   padding: 10px;
   margin: 10px;
+  margin-top: 0;
   border: solid 1px #7F1F71;
   border-radius: 10px;
   width: 297px;
@@ -94,6 +141,7 @@ p {
   border-radius: 10px;
   color: #ffff;
   background-color: #DB4A39;
+  cursor: pointer;
 }
 
 #login-button {
@@ -104,8 +152,9 @@ p {
   border-radius: 10px;
   color: #ffff;
   background-color: #EC46A1;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .far {

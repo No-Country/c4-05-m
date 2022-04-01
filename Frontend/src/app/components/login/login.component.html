@@ -1,6 +1,14 @@
 <div class="inicio">
     <section class="galeria">
-        <img src="../../../assets/images/woman-mod.jpg">
+        <div class="slider">
+            <ul>
+                <li><img src="../../../assets/images/login/login1.jpg" alt="modelo1"></li>
+                <li><img src="../../../assets/images/login/login2.jpg" alt="modelo2"></li>
+                <li><img src="../../../assets/images/login/login3.jpg" alt="modelo3"></li>
+                <li><img src="../../../assets/images/login/login4.jpg" alt="modelo4"></li>
+                <li><img src="../../../assets/images/login/login5.jpg" alt="modelo5"></li>
+            </ul>
+        </div>
     </section>
     <section class="inicioSesion">
         <div class="login">
@@ -23,6 +31,7 @@
                     <br>
                     <input type="password" #password name="password" placeholder="Password" required>
                     <br>
+                    <h4>¿Olvidaste tu contraseña? <button (click)="onReset()">Click aquí</button></h4>
                     <button class="btn btn-success" type="submit" id="login-button" (click)="login()">Iniciar
                         Sesión</button>
                 </form>

@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   username = "";
   password = "";
+  email = "";
 
   constructor(
     private loginService: LoginService,
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
   }
 
   // Login clásico
@@ -29,6 +30,12 @@ export class LoginComponent implements OnInit {
       this.loginService.setToken(data.token);
       this.router.navigateByUrl('/');
     });
+  }
+
+  // Recuperar contraseña
+  onReset() {
+    this.loginService.forgotPassword(this.email);
+    this.email = '';
   }
 
 }
