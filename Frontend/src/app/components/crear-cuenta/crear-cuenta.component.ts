@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../services/http-config.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-crear-cuenta',
@@ -20,7 +21,7 @@ export class CrearCuentaComponent implements OnInit {
   });
 
   imageFile: any;
-  anImage!: string;
+  anImage!: any;
 
   constructor(
     private titleService: Title,
@@ -40,12 +41,15 @@ export class CrearCuentaComponent implements OnInit {
       if (event.target.files && event.target.files.length > 0) {
         let file = event.target.files[0];
 
-        if ( (file.type!="image/jpeg") && (file.type!="image/png")   )    {
+        if ( (file.type != "image/jpeg") && (file.type != "image/png")   )    {
           return false;
         }
 
         reader.readAsDataURL(file);
+
         reader.onload = () => {
+          console.log(reader.result);
+
           this.anImage = "data:image/png;base64," + reader.result!.toString().split(',')[1];
           this.crearCuentaForm.value.userImg = this.anImage;
         };
@@ -71,7 +75,7 @@ export class CrearCuentaComponent implements OnInit {
     console.log(cuenta);
 
     this.httpService
-      .post('http://localhost:3000/api/v1/user/user', cuenta, true)
+      .post(environment.crearCuentaUrl, cuenta, true)
       .subscribe((res) => {
         console.log(res);
       });
