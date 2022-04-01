@@ -13,7 +13,10 @@ export class HttpConfigService {
     private http: HttpClient
   ) {
     // Aquí se setean los headers
-    this._headers = new HttpHeaders({});
+    this._headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      // Authorization: 'my-auth-token'
+    });
   }
 
   // Función genérica para realizar cualquier petición post

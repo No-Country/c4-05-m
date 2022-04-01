@@ -31,17 +31,19 @@ export class CrearCuentaComponent implements OnInit {
 
   // Carga el archivo a subir
   onFileSelected(event: any) {
-    const file = event.target.files[0];
+    let file = event.target.files[0];
+
+    console.log(file);
+
     if (file) {
-        this.crearCuentaForm.value.userImg = file;
+      this.crearCuentaForm.value.userImg = file;
     }
   }
 
   crearCuenta() {
-
     console.log(this.crearCuentaForm);
 
-    const cuenta = {
+    const cuenta = JSON.stringify({
       firstName: this.crearCuentaForm.value.firstName,
       lastName: this.crearCuentaForm.value.lastName,
       username: this.crearCuentaForm.value.username,
@@ -49,16 +51,14 @@ export class CrearCuentaComponent implements OnInit {
       password: this.crearCuentaForm.value.password,
       passwordConfirm: this.crearCuentaForm.value.passwordConfirm,
       userImg: this.crearCuentaForm.value.userImg,
-    }
+    });
 
     console.log(cuenta);
 
-
-    this.httpService.post('http://localhost:3000/api/v1/user/user', cuenta)
-      .subscribe(res => {
+    this.httpService
+      .post('http://localhost:3000/api/v1/user/user', cuenta)
+      .subscribe((res) => {
         console.log(res);
-
-      })
-
+      });
   }
 }
