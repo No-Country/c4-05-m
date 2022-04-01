@@ -1,19 +1,22 @@
 // Import Libraries
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-// const { storage } = require("../database/firebase");
+// const { storage } = require("../utils/firebase");
 // const { ref, uploadBytes, getDownloadURL } = require("firebase/storage");
 
 // Import Utils
 const { catchAsync } = require("../utils/catchAsync");
 const { AppError } = require("../utils/AppError");
+const { Email } = require("../utils/email");
 
 const validateSession = require("../middleware/auth.middleware");
 
 // Import Models
 const User = require("../models/userModel");
+const Image = require("../models/imageModel");
 
 // Login User
+
 exports.loginUser = catchAsync(async (req, res, next) => {
   try {
     const { username, password } = req.body;
@@ -29,11 +32,9 @@ exports.loginUser = catchAsync(async (req, res, next) => {
       return next(new AppError(400, "Credentials are invalid"));
     }
 
-    res
-      .status(200)
-      .json({
-        token
-      });
+    res.status(200).json({
+      token
+    });
     // res.cookie("token", token, { httpOnly: true }).status(200).json({
     //   status: "success"
     // });
@@ -46,6 +47,7 @@ exports.loginUser = catchAsync(async (req, res, next) => {
 });
 
 // Checking the validation of the token
+
 exports.checkToken = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success"
@@ -53,36 +55,35 @@ exports.checkToken = catchAsync(async (req, res, next) => {
 });
 
 // Create default image picture
+
 exports.createDefaultImage = catchAsync(async (req, res, next) => {
   const imgRef = ref(storage, `defaultImagePicture/${req.file.originalname}`);
 
   const result = await uploadBytes(imgRef, req.file.buffer);
 
-  // PENDING CREATE MODEL TO SAVE THE INFORMATION
   const newImageDefault = await Image.create({
-    img: result.metadata.fullPath
+    imageDefault: result.metadata.fullPath
   });
 
   res.status(201).json({
     status: "success",
     data: {
-      img: newImageDefault
+      imageDefault: newImageDefault
     }
   });
 });
 
 // Select default image picture
-exports.selectDefaultImage = catchAsync(async (req, res, next) => {
-  // PENDING TO TEST ITS FUNCIONALITY
-  const img = await Image.find({});
-  console.log(typeof img);
 
-  const imgsPromises = img.map(async ({ img }) => {
-    const imgRef = ref(storage, img);
+exports.selectDefaultImage = catchAsync(async (req, res, next) => {
+  const img = await Image.find();
+
+  const imgsPromises = img.map(async ({ _id, imageDefault }) => {
+    const imgRef = ref(storage, imageDefault);
 
     const imgDownloadUrl = await getDownloadURL(imgRef);
 
-    return { img: imgDownloadUrl };
+    return { _id, img: imgDownloadUrl };
   });
 
   const resolvedImg = await Promise.all(imgsPromises);
@@ -95,15 +96,41 @@ exports.selectDefaultImage = catchAsync(async (req, res, next) => {
   });
 });
 
-// END Select default image picture
+// Create User
 
-const { Email } = require("../utils/email");
+exports.createUser = catchAsync(async (req, res, next) => {
+  const { firstName, lastName, username, email, password, passwordConfirm } = req.body;
+
+  const imgRef = ref(storage, `imgs-${username}/${Date.now()}-${req.file.originalname}`);
+
+  const result = await uploadBytes(imgRef, req.file.buffer);
+
+  const user = await User.create({
+    firstName,
+    lastName,
+    username,
+    email,
+    password,
+    passwordConfirm,
+    img: result.metadata.fullPath
+  });
+
+  user.password = undefined;
+  user.passwordConfirm = undefined;
+
+  res.status(201).json({
+    status: "success",
+    data: {
+      user
+    }
+  });
+});
 
 // Send email to reset the password
+
 exports.sendEmailResetPassword = catchAsync(async (req, res, next) => {
   const { email } = req.body;
 
-  // PENDING IMPORT THE MODEL
   const user = await User.findOne({ email });
 
   if (!user) {
@@ -124,26 +151,8 @@ exports.sendEmailResetPassword = catchAsync(async (req, res, next) => {
   });
 });
 
-// Create User
-
-exports.createUser = catchAsync(async (req, res, next) => {
-  const { firstName, lastName, username, email, password, passwordConfirm } = req.body;
-
-  const user = await User.create({
-    firstName,
-    lastName,
-    username,
-    email,
-    password,
-    passwordConfirm
-  });
-
-  res.status(201).json({
-    status: "success",
-  });
-});
-
 // Reset the password
+
 exports.resetPassword = catchAsync(async (req, res, next) => {
   const { password } = req.body;
 
@@ -166,14 +175,26 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 // Get All Users
+
 exports.getAllUsers = catchAsync(async (req, res, next) => {
-  validateSession();
-  const users = await User.find();
+  const users = await User.find().select("-password");
+
+  const usersPromises = users.map(
+    async ({ _id, firstName, lastName, username, email, role, img }) => {
+      const imgRef = ref(storage, img);
+
+      const imgDownloadUrl = await getDownloadURL(imgRef);
+
+      return { _id, firstName, lastName, username, email, role, img: imgDownloadUrl };
+    }
+  );
+
+  const resolvedUsers = await Promise.all(usersPromises);
 
   res.status(200).json({
     status: "success",
     data: {
-      users
+      users: resolvedUsers
     }
   });
 });
