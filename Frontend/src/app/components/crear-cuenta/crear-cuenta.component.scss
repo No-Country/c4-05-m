@@ -168,6 +168,9 @@ i.fa-solid {
   color: var(--primary-color);
   margin-right: 7px;
 }
+.file-input {
+  display: none;
+}
 
 /* iPads, Tabletas y dispositivos móviles */
 @media all and (max-width: 768px) {
