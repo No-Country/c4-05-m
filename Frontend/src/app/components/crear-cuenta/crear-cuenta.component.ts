@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../services/http-config.service';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 const userData = new FormData();
 
@@ -22,7 +23,8 @@ export class CrearCuentaComponent implements OnInit {
 
   constructor(
     private titleService: Title,
-    private httpService: HttpConfigService
+    private httpService: HttpConfigService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -51,8 +53,19 @@ export class CrearCuentaComponent implements OnInit {
 
     this.httpService
       .post(`${environment.apiUrl}/user/user`, userData)
-      .subscribe((res) => {
-        console.log(res);
+      .subscribe({
+        next: (resp) => {
+          console.log(resp);
+
+        },
+        error: (error) => {
+          console.log(error);
+
+        },
+        complete: () => {
+          console.log('Done');
+          this.router.navigate(['/login']);
+        }
       });
   }
 }
