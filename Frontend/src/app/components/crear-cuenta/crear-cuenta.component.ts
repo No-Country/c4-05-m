@@ -23,6 +23,8 @@ export class CrearCuentaComponent implements OnInit {
   imageFile: any;
   anImage!: any;
 
+  archivos: any = [];
+
   constructor(
     private titleService: Title,
     private httpService: HttpConfigService
@@ -36,7 +38,13 @@ export class CrearCuentaComponent implements OnInit {
   // Carga el archivo a subir
   onFileSelected(event: any) {
 
-      this.imageFile = { id: "0"};
+    console.log(event.target.files);
+    const archivoCapturado = event.target.files[0];
+    this.archivos.push(archivoCapturado);
+
+    this.crearCuentaForm.value.userImg = this.archivos;
+
+      /* this.imageFile = { id: "0"};
       let reader = new FileReader();
       if (event.target.files && event.target.files.length > 0) {
         let file = event.target.files[0];
@@ -54,13 +62,14 @@ export class CrearCuentaComponent implements OnInit {
           this.crearCuentaForm.value.userImg = this.anImage;
         };
 
-      }
+      } */
       return true;
   }
 
   crearCuenta() {
 
     // console.log(this.crearCuentaForm);
+    console.log(this.crearCuentaForm.value.userImg);
 
     const cuenta = {
       firstName: this.crearCuentaForm.value.firstName,
@@ -75,7 +84,7 @@ export class CrearCuentaComponent implements OnInit {
     console.log(cuenta);
 
     this.httpService
-      .post(environment.crearCuentaUrl, cuenta, true)
+      .post(environment.crearCuentaUrl, cuenta)
       .subscribe((res) => {
         console.log(res);
       });
