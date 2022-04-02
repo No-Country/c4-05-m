@@ -53,8 +53,6 @@ export class CrearCuentaComponent implements OnInit {
 
   // Carga el archivo a subir
   onFileSelected(event: any) {
-
-    console.log(event.target.files);
     const archivoCapturado = event.target.files[0];
     this.userImg = archivoCapturado;
     return true;
