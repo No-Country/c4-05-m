@@ -9,14 +9,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username = "";
-  password = "";
-  email = "";
+  user = {
+    username: "",
+    password: ""
+  }
 
   constructor(
     private loginService: LoginService,
-    public router: Router
-  ) { }
+    public router: Router) {
+
+  }
 
   ngOnInit(): void {
 
@@ -25,17 +27,10 @@ export class LoginComponent implements OnInit {
   // Login clásico
 
   login() {
-    const user = { username: this.username, password: this.password };
-    this.loginService.login(user).subscribe((data: any) => {
+    this.loginService.login(this.user).subscribe((data: any) => {
       this.loginService.setToken(data.token);
       this.router.navigateByUrl('/');
     });
-  }
-
-  // Recuperar contraseña
-  onReset() {
-    this.loginService.forgotPassword(this.email);
-    this.email = '';
   }
 
 }
