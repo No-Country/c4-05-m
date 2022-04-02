@@ -50,7 +50,7 @@ export class CrearCuentaComponent implements OnInit {
     userData.append("userImg", this.userImg);
 
     this.httpService
-      .post(environment.crearCuentaUrl, userData)
+      .post(`${environment.apiUrl}/user/user`, userData)
       .subscribe((res) => {
         console.log(res);
       });
