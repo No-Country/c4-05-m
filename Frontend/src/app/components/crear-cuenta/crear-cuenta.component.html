@@ -1,7 +1,7 @@
 <div class="title">
   <h1>Fashion Hunter</h1>
 </div>
-<form class="container" [formGroup]="crearCuentaForm">
+<form class="container">
   <div class="subtitle">
     <h2>Crear cuenta</h2>
     <div>
@@ -12,18 +12,19 @@
     <div class="flex-item">
       <h3>Datos Personales</h3>
       <div class="line-right">
-        <input formControlName="firstName" type="text" placeholder="Nombre" autocomplete="off" />
+        <input [(ngModel)]="firstName" name="firstName" type="text" placeholder="Nombre" autocomplete="off" />
         <br />
-        <input formControlName="lastName" type="text" placeholder="Apellido" autocomplete="off" />
+        <input [(ngModel)]="lastName" name="lastName" type="text" placeholder="Apellido" autocomplete="off" />
         <br />
-        <input formControlName="username" type="text" placeholder="Usuario" autocomplete="off" />
+        <input [(ngModel)]="username" name="username" type="text" placeholder="Usuario" autocomplete="off" />
         <br />
-        <input formControlName="email" type="email" placeholder="Email" autocomplete="off" />
+        <input [(ngModel)]="email" name="email" type="email" placeholder="Email" autocomplete="off" />
         <br />
-        <input formControlName="password" type="password" placeholder="Contraseña" autocomplete="off" />
+        <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" autocomplete="off" />
         <br />
         <input
-          formControlName="passwordConfirm"
+          [(ngModel)]="passwordConfirm"
+          name="passwordConfirm"
           type="password"
           placeholder="Confirmar contraseña"
           autocomplete="off"
