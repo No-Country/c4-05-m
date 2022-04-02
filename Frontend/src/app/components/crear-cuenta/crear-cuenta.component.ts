@@ -20,16 +20,35 @@ export class CrearCuentaComponent implements OnInit {
   password: any;
   passwordConfirm: any;
   userImg: any;
+  predefinedImgs: any;
 
   constructor(
-    private titleService: Title,
+    private _title: Title,
     private httpService: HttpConfigService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     // Cambia el title del sitio:
-    this.titleService.setTitle('Fashion Hunter - Crear Cuenta');
+    this._title.setTitle('Fashion Hunter - Crear Cuenta');
+
+    // Obtener imagenes preestablecidas
+    this.httpService.get(environment.apiUrl + '/user/img')
+      .subscribe({
+        next: (resp: any) => {
+          console.log(resp);
+          this.predefinedImgs = resp.data.img;
+
+        },
+        error: (error) => {
+          console.log(error);
+
+        },
+        complete: () => {
+          console.log('Done');
+
+        }
+      });
   }
 
   // Carga el archivo a subir

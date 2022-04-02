@@ -39,40 +39,11 @@
           temporario.
         </p>
         <div class="flex-container profile-photos">
-          <div class="flex-item">
+          <div class="flex-item" *ngFor="let img of predefinedImgs; let i = index">
             <img
-              src="assets/images/avatar-crear-cuenta-web/luisana-galicia-rGz2Z6tVaeg-unsplash.jpg"
-              alt="1"
-            />
-          </div>
-          <div class="flex-item">
-            <img
-              src="assets/images/avatar-crear-cuenta-web/mohammad-metri-E-0ON3VGrBc-unsplash.jpg"
-              alt="2"
-            />
-          </div>
-          <div class="flex-item">
-            <img
-              src="assets/images/avatar-crear-cuenta-web/amy-shamblen-xwM61TPMlYk-unsplash.jpg"
-              alt="3"
-            />
-          </div>
-          <div class="flex-item">
-            <img
-              src="assets/images/avatar-crear-cuenta-web/arno-senoner-oCXVxwTFwqE-unsplash.jpg"
-              alt="4"
-            />
-          </div>
-          <div class="flex-item">
-            <img
-              src="assets/images/avatar-crear-cuenta-web/lensabl-0GfPlommtxM-unsplash.jpg"
-              alt="5"
-            />
-          </div>
-          <div class="flex-item">
-            <img
-              src="assets/images/avatar-crear-cuenta-web/alexandra-gorn-WF0LSThlRmw-unsplash.jpg"
-              alt="6"
+              *ngIf="i < 6"
+              [src]="img.img"
+              [alt]="i"
             />
           </div>
         </div>
