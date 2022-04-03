@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../services/http-config.service';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
@@ -20,20 +20,24 @@ export class CrearCuentaComponent implements OnInit {
   password: any;
   passwordConfirm: any;
   userImg: any;
-  predefinedImgs: any;
+  // predefinedImgs: any;
+  previsualizacion: string;
 
   constructor(
     private _title: Title,
     private httpService: HttpConfigService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+    this.previsualizacion = "assets/images/avatar/guest-user.png";
+  }
 
   ngOnInit(): void {
     // Cambia el title del sitio:
     this._title.setTitle('Fashion Hunter - Crear Cuenta');
 
     // Obtener imagenes preestablecidas
-    this.httpService.get(environment.apiUrl + '/user/img')
+    /* this.httpService.get(environment.apiUrl + '/user/img')
       .subscribe({
         next: (resp: any) => {
           console.log(resp);
@@ -48,15 +52,40 @@ export class CrearCuentaComponent implements OnInit {
           console.log('Done');
 
         }
-      });
+      }); */
   }
 
   // Carga el archivo a subir
   onFileSelected(event: any) {
     const archivoCapturado = event.target.files[0];
+    this.extraerBase64(archivoCapturado).then((imagen: any) => {
+      this.previsualizacion = imagen.base;
+    })
     this.userImg = archivoCapturado;
     return true;
   }
+
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+      return true;
+    } catch (e) {
+      return null;
+    }
+  })
 
   crearCuenta() {
 

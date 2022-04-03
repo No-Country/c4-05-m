@@ -34,18 +34,32 @@
     <div class="flex-item">
       <h3>Foto de perfil</h3>
       <div class="photo-selection">
-        <p>
+        <!-- <p>
           Nos encantaría conocerte, pero también puedes elegir un avatar
           temporario.
+        </p> -->
+        <!-- : -->
+        <p>
+          Nos encantaría conocerte, elige una imagen a continuación.
         </p>
+        <!-- : -->
         <div class="flex-container profile-photos">
-          <div class="flex-item" *ngFor="let img of predefinedImgs; let i = index">
+          <!-- <div class="flex-item" *ngFor="let img of predefinedImgs; let i = index">
             <img
               *ngIf="i < 6"
               [src]="img.img"
               [alt]="i"
             />
+          </div> -->
+          <!-- : -->
+          <div class="flex-item" *ngIf="previsualizacion">
+            <img
+              [src]="previsualizacion"
+              alt=""
+              (click)="fileUpload.click()"
+            />
           </div>
+          <!-- : -->
         </div>
         <div class="upload-photo">
           <input type="file" class="file-input"
