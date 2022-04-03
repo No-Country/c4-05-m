@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, CrearCuentaComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, BrowserAnimationsModule],
+  declarations: [AppComponent, CrearCuentaComponent, DialogComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, BrowserAnimationsModule, MaterialModule],
   providers: [Title],
   bootstrap: [AppComponent],
 })

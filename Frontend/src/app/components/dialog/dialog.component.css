@@ -1,0 +1,16 @@
+body {
+  background: var(--background-color);
+}
+.container {
+  color: var(--primary-color);
+  text-align: center;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+}
+.actions button {
+  margin: 30px;
+  color: white;
+  background: var(--secondary-color);
+}

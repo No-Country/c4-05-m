@@ -3,6 +3,8 @@ import { DomSanitizer, Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../services/http-config.service';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 const userData = new FormData();
 
@@ -27,7 +29,8 @@ export class CrearCuentaComponent implements OnInit {
     private _title: Title,
     private httpService: HttpConfigService,
     private router: Router,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    public dialog: MatDialog
   ) {
     this.previsualizacion = "assets/images/avatar/guest-user.png";
   }
@@ -110,8 +113,13 @@ export class CrearCuentaComponent implements OnInit {
         },
         complete: () => {
           console.log('Done');
-          this.router.navigate(['/login']);
+          this.openDialog();
+          // this.router.navigate(['/login']);
         }
       });
+  }
+
+  openDialog() {
+    this.dialog.open(DialogComponent, {disableClose: true});
   }
 }

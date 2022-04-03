@@ -18,12 +18,10 @@
   --secondary-font: "Open Sans", sans-serif;
   --background-color: #e5e5e5;
 }
+html, body { height: 100%; }
 body {
   margin: 0px;
   padding: 0px;
   background: var(--background-color);
   font-family: var(--secondary-font);
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
