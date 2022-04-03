@@ -38,24 +38,6 @@ export class CrearCuentaComponent implements OnInit {
   ngOnInit(): void {
     // Cambia el title del sitio:
     this._title.setTitle('Fashion Hunter - Crear Cuenta');
-
-    // Obtener imagenes preestablecidas
-    /* this.httpService.get(environment.apiUrl + '/user/img')
-      .subscribe({
-        next: (resp: any) => {
-          console.log(resp);
-          this.predefinedImgs = resp.data.img;
-
-        },
-        error: (error) => {
-          console.log(error);
-
-        },
-        complete: () => {
-          console.log('Done');
-
-        }
-      }); */
   }
 
   // Carga el archivo a subir
@@ -101,7 +83,7 @@ export class CrearCuentaComponent implements OnInit {
     userData.append("userImg", this.userImg);
 
     this.httpService
-      .post(`${environment.apiUrl}/user/user`, userData)
+      .post(`${environment.apiUrl}/user/signup`, userData)
       .subscribe({
         next: (resp) => {
           console.log(resp);
@@ -114,7 +96,6 @@ export class CrearCuentaComponent implements OnInit {
         complete: () => {
           console.log('Done');
           this.openDialog();
-          // this.router.navigate(['/login']);
         }
       });
   }
