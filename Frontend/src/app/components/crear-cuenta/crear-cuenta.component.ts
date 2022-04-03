@@ -9,7 +9,7 @@ const userData = new FormData();
 @Component({
   selector: 'app-crear-cuenta',
   templateUrl: './crear-cuenta.component.html',
-  styleUrls: ['./crear-cuenta.component.scss'],
+  styleUrls: ['./crear-cuenta.component.css'],
 })
 export class CrearCuentaComponent implements OnInit {
 
