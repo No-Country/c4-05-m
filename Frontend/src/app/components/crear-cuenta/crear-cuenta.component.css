@@ -215,6 +215,7 @@ i.fa-solid {
     height: 104px;
     border-radius: 100%;
     border: 2px solid var(--primary-color);
+    padding: 2px;
   }
   h1 {
     font-size: 36px;
@@ -255,5 +256,8 @@ i.fa-solid {
     margin-bottom: 65px;
     margin-top: 65px;
     cursor: pointer;
+  }
+  .preview {
+
   }
 }
