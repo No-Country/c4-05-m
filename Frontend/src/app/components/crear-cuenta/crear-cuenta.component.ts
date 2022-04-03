@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../services/http-config.service';
 import { environment } from '../../../environments/environment';
-import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -22,13 +21,11 @@ export class CrearCuentaComponent implements OnInit {
   password: any;
   passwordConfirm: any;
   userImg: any;
-  // predefinedImgs: any;
   previsualizacion: string;
 
   constructor(
     private _title: Title,
     private httpService: HttpConfigService,
-    private router: Router,
     private sanitizer: DomSanitizer,
     public dialog: MatDialog
   ) {
@@ -41,13 +38,18 @@ export class CrearCuentaComponent implements OnInit {
   }
 
   // Carga el archivo a subir
-  onFileSelected(event: any) {
-    const archivoCapturado = event.target.files[0];
-    this.extraerBase64(archivoCapturado).then((imagen: any) => {
-      this.previsualizacion = imagen.base;
-    })
-    this.userImg = archivoCapturado;
-    return true;
+  onFileSelected(event: any): boolean {
+    if (event.target.files[0]) {
+
+      const archivoCapturado = event.target.files[0];
+      this.extraerBase64(archivoCapturado).then((imagen: any) => {
+        this.previsualizacion = imagen.base;
+      })
+      this.userImg = archivoCapturado;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {

@@ -190,6 +190,9 @@ i.fa-solid {
 .file-input {
   display: none;
 }
+.input-error {
+  color: red;
+}
 
 /* iPads, Tabletas y dispositivos móviles */
 @media all and (max-width: 768px) {
