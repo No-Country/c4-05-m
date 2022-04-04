@@ -164,7 +164,7 @@ input {
   margin: auto;
 }
 .upload-photo button {
-  width: 117.16px;
+  width: 8rem;
   height: 32.4px;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
@@ -173,8 +173,8 @@ input {
   cursor: pointer;
 }
 .go button {
-  width: 196.02px;
-  height: 37.26px;
+  width: 12.5rem;
+  height: 2.5rem;
   background: var(--secondary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
