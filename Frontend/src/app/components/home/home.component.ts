@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logOut(){ // Éste método va en el Home
+  logOut(){
     this.cookies.delete('token');
     this.router.navigateByUrl('/login')
   }
