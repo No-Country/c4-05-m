@@ -10,17 +10,13 @@ import { MaterialModule } from './modules/material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
-import { HomeComponent } from './components/home/home.component';
-import { GuardadasComponent } from './components/guardadas/guardadas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearCuentaComponent,
     DialogComponent,
-    LoginComponent,
-    HomeComponent,
-    GuardadasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
