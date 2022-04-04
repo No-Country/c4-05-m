@@ -50,7 +50,7 @@ h1 {
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 400;
-  font-size: 38.88px;
+  font-size: 2.43rem;
   line-height: 5rem;
   color: var(--primary-color);
   margin-left: 49.41px;
@@ -65,7 +65,7 @@ h2 {
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 2.43rem;
   color: var(--primary-color);
 }
@@ -73,7 +73,7 @@ h3 {
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 600;
-  font-size: 1.62rem;
+  font-size: 1rem;
   line-height: 1.92rem;
   text-align: center;
   color: var(--primary-color);
@@ -88,7 +88,7 @@ p {
 }
 input {
   width: 267px;
-  height: 20px;
+  height: 1rem;
   font-family: var(--secondary-font);
   font-size: 1rem;
   line-height: 1.2rem;
@@ -134,8 +134,8 @@ input {
 } */
 /* // --> */
 .profile-photos .flex-item {
-  width: 200px;
-  height: 200px;
+  width: 10rem;
+  height: 10rem;
   margin: 10px;
   padding: 10px;
 }
@@ -150,8 +150,8 @@ input {
 } */
 /* // --> */
 .profile-photos .flex-item img {
-  width: 200px;
-  height: 200px;
+  width: 10rem;
+  height: 10rem;
   object-fit: cover;
   border: 2px solid var(--primary-color);
   padding: 2px;
