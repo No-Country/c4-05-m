@@ -10,6 +10,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CookieService } from 'ngx-cookie-service';
     CrearCuentaComponent,
     DialogComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
