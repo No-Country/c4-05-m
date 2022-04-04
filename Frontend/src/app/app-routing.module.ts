@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { SessionGuard } from './guards/session.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'crear-cuenta', component: CrearCuentaComponent},
-  {path: 'home', component: HomeComponent},
-  {path: '**', pathMatch: 'full', redirectTo: 'login'}
+  {path: 'home', component: HomeComponent, canActivate: [SessionGuard]},
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
 @NgModule({
