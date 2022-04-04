@@ -12,9 +12,7 @@ export class LoginService {
 
   constructor(
     private httpService: HttpConfigService,
-    private cookies: CookieService,
-    private router: Router
-
+    private cookies: CookieService
   ) { }
 
   // Login
@@ -29,8 +27,4 @@ export class LoginService {
     return this.cookies.get("token");
   }
 
-  logOut(){ // Éste método va en el Home
-    this.cookies.delete('token');
-    this.router.navigateByUrl('/login')
-  }
 }
