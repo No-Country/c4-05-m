@@ -11,6 +11,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HomeComponent } from './components/home/home.component';
+import { GuardadasComponent } from './components/guardadas/guardadas.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './components/home/home.component';
     DialogComponent,
     LoginComponent,
     HomeComponent,
+    GuardadasComponent,
   ],
   imports: [
     BrowserModule,
