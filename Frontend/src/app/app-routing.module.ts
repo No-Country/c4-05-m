@@ -13,7 +13,11 @@ const routes: Routes = [
     canActivate: [NavigationGuard],
   },
   { path: 'login', component: LoginComponent, canActivate: [SessionGuard] },
-  { path: 'crear-cuenta', component: CrearCuentaComponent, canActivate: [SessionGuard] },
+  {
+    path: 'crear-cuenta',
+    component: CrearCuentaComponent,
+    canActivate: [SessionGuard],
+  },
   { path: '**', pathMatch: 'full', redirectTo: '' },
 ];
 
