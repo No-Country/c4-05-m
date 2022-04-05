@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ForgetPasswordService } from 'src/app/services/forget-password.service';
-
 
 @Component({
   selector: 'app-forget-password',
@@ -8,22 +8,25 @@ import { ForgetPasswordService } from 'src/app/services/forget-password.service'
   styleUrls: ['../../../../css/forget-password.component.css']
 })
 export class ForgetPasswordComponent implements OnInit {
-
-  user = {
-    username: ""
-  }
+  
+  public form: FormGroup;
 
   constructor(
-    private forgetPasswodService: ForgetPasswordService
-  ) { 
-
+    private forgetPasswodService: ForgetPasswordService,
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group({
+      email: ['']
+    });
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
   sendEmail() {
-    this.forgetPasswodService.forgotPassword('');
-    console.log('Email enviado')
-}
-}
+    return this.forgetPasswodService.forgotPassword().subscribe({
+      next: () => console.log('Email enviado'),
+      error: error => console.log(error)
+    });
+    };
+  };

@@ -1,21 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Global } from '../global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ForgetPasswordService {
 
-  public email: " ";
+  public url: string;
+  public body: {}
 
-  constructor() { 
+  constructor(private http: HttpClient) { 
 
-    this.email = " ";
+    this.url = Global.url;
+    this.body = {
+      "email": ""
+    }
   }
 
-    // Forgot password
-
-    forgotPassword(email: "") {
-     return this.email
+  forgotPassword(){
+     return this.http.post(this.url + 'forgotPassword', this.body)
   }
+
+  resetPassword(password: string, confirmPassword: string) { //ver confirm
+    return this.http.post(this.url + 'resetpassword/', password)
+ }
 }

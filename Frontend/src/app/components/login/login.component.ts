@@ -33,4 +33,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // Probando LogOut
+  logOut(){
+    console.log("delete cookies")
+  };
 }
