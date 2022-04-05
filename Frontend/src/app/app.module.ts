@@ -7,15 +7,14 @@ import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.com
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
-import { DialogComponent } from './components/dialog/dialog.component';
 import { LoginComponent } from './components/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearCuentaComponent,
-    DialogComponent,
     LoginComponent
   ],
   imports: [
@@ -25,6 +24,7 @@ import { CookieService } from 'ngx-cookie-service';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    SharedModule
   ],
   providers: [Title, CookieService],
   bootstrap: [AppComponent],
