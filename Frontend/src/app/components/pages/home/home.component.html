@@ -71,40 +71,12 @@
 </div>
 
 <!-- suggestions -->
-<div class="suggestions">
+<div class="suggestions" *ngIf="suggestions.length">
   <p class="suggestions-title">Sugerencias para ti</p>
-  <!-- Suggestion -->
-  <div class="suggestion">
-    <img src="assets/images/avatar/sara.png" alt="">
-    <span class="suggestion-name">Sara Gomez</span>
-    <span class="follow">Seguir</span>
-  </div>
-
-  <!-- Another suggestion -->
-  <div class="suggestion">
-    <img src="assets/images/avatar/manuel.png" alt="">
-    <span class="suggestion-name">Manuel García</span>
-    <span class="follow">Seguir</span>
-  </div>
-
-  <!-- suggestion 3 -->
-  <div class="suggestion">
-    <img src="assets/images/avatar/lucia.png" alt="">
-    <span class="suggestion-name">Lucía Aplon</span>
-    <span class="follow">Seguir</span>
-  </div>
-
-  <!-- suggestion 4 -->
-  <div class="suggestion">
-    <img src="assets/images/avatar/sofia.png" alt="">
-    <span class="suggestion-name">Sofía Weish</span>
-    <span class="follow">Seguir</span>
-  </div>
-
-  <!-- Suggestion 5 -->
-  <div class="suggestion">
-    <img src="assets/images/avatar/descarga.png" alt="">
-    <span class="suggestion-name">Zara Argentina</span>
+  <!-- Suggestion 1 -->
+  <div class="suggestion" *ngFor="let suggestion of suggestions | slice:suggestions.length - 5; let i = index">
+    <img [src]="suggestion['img']" alt="Suggestion {{i + 1}}">
+    <span class="suggestion-name">{{ suggestion['firstName'] }}&nbsp;{{ suggestion['lastName'] }}</span>
     <span class="follow">Seguir</span>
   </div>
 </div>

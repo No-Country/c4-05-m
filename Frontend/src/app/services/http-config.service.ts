@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,13 @@ export class HttpConfigService {
   private _headers!: HttpHeaders;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private cookies: CookieService
   ) {
     // Aquí se setean los headers
     this._headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      // Authorization: 'my-auth-token'
+      'Authorization': 'Bearer ' + this.cookies.get('token')
     });
   }
 
