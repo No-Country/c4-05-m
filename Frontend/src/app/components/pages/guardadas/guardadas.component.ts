@@ -20,6 +20,10 @@ export class GuardadasComponent implements OnInit {
     this._title.setTitle('Fashion Hunter - Guardadas');
   }
 
+  goHome() {
+    this.router.navigate(['/home']);
+  }
+
   logOut(){
     this.cookies.delete('token');
     this.router.navigateByUrl('/login')
