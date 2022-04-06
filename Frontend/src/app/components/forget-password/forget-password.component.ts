@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ForgetPasswordService } from 'src/app/services/forget-password.service';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog1Component } from '../../modules/shared/dialog1/dialog1.component';
 
 @Component({
   selector: 'app-forget-password',
@@ -12,7 +14,8 @@ export class ForgetPasswordComponent implements OnInit {
 
   constructor(
     private forgetPasswodService: ForgetPasswordService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog
   ) {
     this.form = this.formBuilder.group({
       email: [''],
@@ -22,9 +25,14 @@ export class ForgetPasswordComponent implements OnInit {
   ngOnInit() {}
 
   sendEmail() {
-    return this.forgetPasswodService.forgotPassword().subscribe({
-      next: () => console.log('Email enviado'),
-      error: (error) => console.log(error),
+    return this.forgetPasswodService.forgotPassword(this.form.value.email).subscribe({
+      next: () => {
+        console.log('Email enviado');
+        this.dialog.open(Dialog1Component, {disableClose: false});
+      },
+      error: (error) => {
+        console.log(error);
+      },
     });
   }
 }

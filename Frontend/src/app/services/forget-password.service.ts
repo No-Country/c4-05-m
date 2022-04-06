@@ -14,12 +14,13 @@ export class ForgetPasswordService {
 
     this.url = `${environment.apiUrl}/user/`;
     this.body = {
-      "email": ""
+      "email": "nicolasgonzalezg6@gmail.com"
     }
   }
 
-  forgotPassword(){
-     return this.httpService.post(this.url + 'forgotPassword', this.body)
+  forgotPassword(email: string){
+    const theEmail = {email};
+    return this.httpService.post(this.url + 'forgotPassword', theEmail)
   }
 
   resetPassword(password: string, confirmPassword: string) { //ver confirm

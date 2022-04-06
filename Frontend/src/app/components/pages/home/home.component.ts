@@ -46,6 +46,8 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (resp: any) => {
           this.suggestions = resp.data.users;
+          console.log(resp);
+
         },
         error: (error) => { },
         complete: () => { }
