@@ -12,11 +12,12 @@ const routes: Routes = [
       import('./components/pages/pages.module').then((m) => m.PagesModule),
     canActivate: [NavigationGuard],
   },
-  { path: 'login', component: LoginComponent, canActivate: [SessionGuard] },
+  { path: 'login', component: LoginComponent, canActivate: [SessionGuard], data: {animation: 'loginPage'} },
   {
     path: 'crear-cuenta',
     component: CrearCuentaComponent,
     canActivate: [SessionGuard],
+    data: {animation: 'crearCuentaPage'}
   },
   { path: '**', pathMatch: 'full', redirectTo: '' },
 ];

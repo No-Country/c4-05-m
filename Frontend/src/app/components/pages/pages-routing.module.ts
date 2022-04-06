@@ -6,8 +6,8 @@ import { GuardadasComponent } from './guardadas/guardadas.component';
 
 const routes: Routes = [
   { path: '', component: PagesComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'guardadas', component: GuardadasComponent }
+  { path: 'home', component: HomeComponent, data: {animation: 'homePage'} },
+  { path: 'guardadas', component: GuardadasComponent, data: {animation: 'guardadasPage'} }
 ];
 
 @NgModule({
