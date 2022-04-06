@@ -23,11 +23,15 @@ export class HomeComponent implements OnInit {
       if (this.suggestions.length === 0) {
         this.loadSuggestions();
       }
-    }, 2000);
+    }, 3000);
 
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    if (this.suggestions.length === 0) {
+      this.loadSuggestions();
+    }
+  }
 
   loadSuggestions(): void {
 
