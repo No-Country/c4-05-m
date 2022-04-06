@@ -5,13 +5,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { GuardadasComponent } from './guardadas/guardadas.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
-    GuardadasComponent
+    GuardadasComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

@@ -1,13 +1,7 @@
 <!-- Header -->
-<div class="title">
-  <h1>Fashion Hunter</h1>
-  <div class="right">
-    <p>Marina <br /><small (click)="logOut()">Cerrar sesión</small></p>
-    <img src="assets/images/avatar/Marina.png" class="img-rounded" alt="" />
-  </div>
-</div>
+<app-header></app-header>
 
-<!-- One post -->
+<!-- Post 1 -->
 <div class="posts-container">
   <div class="posts">
     <div class="post">
@@ -35,7 +29,7 @@
   </div>
 </div>
 
-<!-- Another post -->
+<!-- Post 2 -->
 <div class="posts-container">
   <div class="posts">
     <div class="post">
@@ -63,17 +57,16 @@
   </div>
 </div>
 
-<!-- Accesos directos -->
+<!-- Shortcuts -->
 <div class="shortcuts">
   <img src="assets/images/icons/Favorite.png" alt="" [routerLink]="['/guardadas']">
   <img src="assets/images/icons/Add_New.png" alt="" class="add-new-icon">
   <img src="assets/images/icons/chat.png" alt="">
 </div>
 
-<!-- suggestions -->
+<!-- Suggestions -->
 <div class="suggestions" *ngIf="suggestions.length">
   <p class="suggestions-title">Sugerencias para ti</p>
-  <!-- Suggestion 1 -->
   <div class="suggestion" *ngFor="let suggestion of suggestions | slice:suggestions.length - 5; let i = index">
     <img [src]="suggestion['img']" alt="Suggestion {{i + 1}}">
     <span class="suggestion-name">{{ suggestion['firstName'] }}&nbsp;{{ suggestion['lastName'] }}</span>

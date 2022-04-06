@@ -1,7 +1,5 @@
 import { environment } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../../services/http-config.service';
 
@@ -12,18 +10,25 @@ import { HttpConfigService } from '../../../services/http-config.service';
 })
 export class HomeComponent implements OnInit {
 
-  miArray = new Array(5);
   suggestions = [];
 
   constructor(
-    private cookies: CookieService,
-    private router: Router,
     private _title: Title,
     private httpService: HttpConfigService
-  ) { }
+  ) {
+
+    this._title.setTitle('Fashion Hunter - Home');
+
+  }
 
   ngOnInit(): void {
-    this._title.setTitle('Fashion Hunter - Home');
+    if (this.suggestions.length === 0) {
+      this.loadSuggestions();
+    }
+  }
+
+  loadSuggestions(): void {
+
     this.httpService.get(`${environment.apiUrl}/user/all-users`, true)
       .subscribe({
         next: (resp: any) => {
@@ -37,12 +42,7 @@ export class HomeComponent implements OnInit {
           console.log('Complete');
 
         }
-      })
-  }
+      });
 
-  logOut(){
-    this.cookies.delete('token');
-    this.router.navigateByUrl('/login')
   }
-
 }
