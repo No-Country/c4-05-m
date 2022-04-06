@@ -168,17 +168,19 @@ h4 {
 }
 
 #google {
-  width: 138px;
-  height: 44px;
+  width: 130px;
+  height: 35px;
   margin: 20px;
   border: 0;
+  object-fit: cover;
 }
 
 #apple {
-  width: 134px;
-  height: 43px;
+  width: 130px;
+  height: 35px;
   margin: 20px;
   border: 0;
+  object-fit: cover;
 }
 
 hr {
