@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
       );
 
     observablePattern.subscribe({
-        next: resp => console.log(resp),
-        error: error => console.log(error),
-        complete: () => console.log('Complete')
+        next: resp => { },
+        error: error => { },
+        complete: () => { }
       });
 
   }
@@ -45,18 +45,10 @@ export class HomeComponent implements OnInit {
     this.httpService.get(`${environment.apiUrl}/user/all-users`, true)
       .subscribe({
         next: (resp: any) => {
-          console.log(resp);
-
           this.suggestions = resp.data.users;
         },
-        error: (error) => {
-          console.log(error);
-
-        },
-        complete: () => {
-          console.log('Complete');
-
-        }
+        error: (error) => { },
+        complete: () => { }
       });
 
   }

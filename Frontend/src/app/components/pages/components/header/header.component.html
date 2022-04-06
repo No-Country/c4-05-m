@@ -1,8 +1,8 @@
 <!-- Header -->
 <div class="title">
   <h1 (click)="goHome()">Fashion Hunter</h1>
-  <div class="right">
-    <p>Marina <br /><small (click)="logOut()">Cerrar sesión</small></p>
-    <img src="assets/images/avatar/Marina.png" class="img-rounded" alt="" />
+  <div class="right" *ngIf="user">
+    <p>{{ user[0].firstName }} <br /><small (click)="logOut()">Cerrar sesión</small></p>
+    <img [src]="user[0].img" class="img-rounded" alt="" />
   </div>
 </div>

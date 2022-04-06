@@ -87,16 +87,9 @@ export class CrearCuentaComponent implements OnInit {
     this.httpService
       .post(`${environment.apiUrl}/user/signup`, userData)
       .subscribe({
-        next: (resp) => {
-          console.log(resp);
-
-        },
-        error: (error) => {
-          console.log(error);
-
-        },
+        next: (resp) => { },
+        error: (error) => { },
         complete: () => {
-          console.log('Done');
           this.openDialog();
         }
       });

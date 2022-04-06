@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { Title } from '@angular/platform-browser';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,12 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private loginService: LoginService, public router: Router, private _title: Title) {}
+  constructor(
+    private loginService: LoginService,
+    public router: Router,
+    private _title: Title,
+    private cookies: CookieService
+  ) {}
 
   ngOnInit(): void {
     this._title.setTitle('Fashion Hunter - Login');
@@ -25,6 +31,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.loginService.login(this.user).subscribe((data: any) => {
       this.loginService.setToken(data.token);
+      this.cookies.set('username', this.user.username);
       this.router.navigateByUrl('/home');
     });
   }
