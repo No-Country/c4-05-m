@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
@@ -11,7 +10,6 @@ import { Title } from '@angular/platform-browser';
 export class GuardadasComponent implements OnInit {
 
   constructor(
-    private cookies: CookieService,
     private router: Router,
     private _title: Title
   ) { }
@@ -22,11 +20,6 @@ export class GuardadasComponent implements OnInit {
 
   goHome() {
     this.router.navigate(['/home']);
-  }
-
-  logOut(){
-    this.cookies.delete('token');
-    this.router.navigateByUrl('/login')
   }
 
 }

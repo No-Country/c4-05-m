@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goHome(): void {
+    this.router.navigate(['/home']);
+  }
+
   logOut(){
     this.cookies.delete('token');
     this.router.navigateByUrl('/login')

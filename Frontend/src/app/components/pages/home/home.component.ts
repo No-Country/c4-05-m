@@ -19,19 +19,23 @@ export class HomeComponent implements OnInit {
 
     this._title.setTitle('Fashion Hunter - Home');
 
+    setTimeout(() => {
+      if (this.suggestions.length === 0) {
+        this.loadSuggestions();
+      }
+    }, 2000);
+
   }
 
-  ngOnInit(): void {
-    if (this.suggestions.length === 0) {
-      this.loadSuggestions();
-    }
-  }
+  ngOnInit(): void { }
 
   loadSuggestions(): void {
 
     this.httpService.get(`${environment.apiUrl}/user/all-users`, true)
       .subscribe({
         next: (resp: any) => {
+          console.log(resp);
+
           this.suggestions = resp.data.users;
         },
         error: (error) => {
