@@ -2,6 +2,7 @@ import { environment } from './../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../../services/http-config.service';
+import { delay, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -19,19 +20,25 @@ export class HomeComponent implements OnInit {
 
     this._title.setTitle('Fashion Hunter - Home');
 
-    setTimeout(() => {
-      if (this.suggestions.length === 0) {
-        this.loadSuggestions();
-      }
-    }, 3000);
+    const observablePattern = of(true)
+      .pipe(
+          delay(2000),
+          tap(() => {
+            if (this.suggestions.length === 0) {
+              this.loadSuggestions();
+            }
+          })
+      );
+
+    observablePattern.subscribe({
+        next: resp => console.log(resp),
+        error: error => console.log(error),
+        complete: () => console.log('Complete')
+      });
 
   }
 
-  ngOnInit(): void {
-    if (this.suggestions.length === 0) {
-      this.loadSuggestions();
-    }
-  }
+  ngOnInit(): void { }
 
   loadSuggestions(): void {
 
