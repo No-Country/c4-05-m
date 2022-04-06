@@ -13,10 +13,10 @@ export const fadeInAnimation =
           left: 0,
           width: '100%'
         })
-      ]),
+      ], { optional: true }),
       query(':enter', [
         style({ opacity: 0 })
-      ]),
+      ], { optional: true }),
       query(':leave', animateChild(), { optional: true }),
       group([
         query(':leave', [
@@ -24,8 +24,8 @@ export const fadeInAnimation =
         ], { optional: true }),
         query(':enter', [
           animate(duration, style({ opacity: 1 }))
-        ])
+        ], { optional: true })
       ]),
-      query(':enter', animateChild()),
+      query(':enter', animateChild(), { optional: true }),
     ])
   ]);
