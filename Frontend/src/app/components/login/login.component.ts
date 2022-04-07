@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { Title } from '@angular/platform-browser';
-import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     public router: Router,
     private _title: Title,
-    private cookies: CookieService
   ) {}
 
   ngOnInit(): void {
@@ -32,11 +30,9 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.user)
       .subscribe({
         next: (resp: any) => {
-          console.log(resp);
-
           this.loginService.setToken(resp.token);
-          this.cookies.set('username', this.user.username);
-          this.router.navigateByUrl('/home');
+          this.loginService.setUserId(resp.userId);
+          window.location.reload();
         }
       });
   }

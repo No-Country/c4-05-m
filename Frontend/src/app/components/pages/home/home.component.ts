@@ -42,12 +42,11 @@ export class HomeComponent implements OnInit {
 
   loadSuggestions(): void {
 
-    this.httpService.get(`${environment.apiUrl}/user/all-users`, true)
+    this.httpService.get<any>(`${environment.apiUrl}/user/all-users`, true)
       .subscribe({
         next: (resp: any) => {
-          this.suggestions = resp.data.users;
-          console.log(resp);
-
+          const allUsers = resp.data.users;
+          this.suggestions = allUsers.slice(allUsers.length - 5);
         },
         error: (error) => { },
         complete: () => { }

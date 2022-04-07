@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
 import { HttpConfigService } from '../../../../services/http-config.service';
+import { LoginService } from '../../../../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -16,14 +17,16 @@ export class HeaderComponent implements OnInit {
   constructor(
     private cookies: CookieService,
     private router: Router,
-    private httpService: HttpConfigService
+    private httpService: HttpConfigService,
+    private loginService: LoginService
   ) {
 
-    this.httpService.get(`${environment.apiUrl}/user/all-users`, true)
+    const userId = this.loginService.getUserId();
+
+    this.httpService.get<any>(`${environment.apiUrl}/user/${userId}`, true)
       .subscribe({
         next: (resp: any) => {
-          const users = resp.data.users;
-          this.user = users.filter((user: any) => user.username === this.cookies.get('username'));
+          this.user = resp.data.user;
         },
         error: error => { },
         complete: () => { }
@@ -38,8 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut(){
-    this.cookies.delete('token');
-    this.router.navigateByUrl('/login')
+    this.loginService.logOut();
   }
 
 }

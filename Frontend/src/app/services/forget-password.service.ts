@@ -8,14 +8,10 @@ import { environment } from '../../environments/environment';
 export class ForgetPasswordService {
 
   public url: string;
-  public body: {}
 
   constructor(private httpService: HttpConfigService) {
 
     this.url = `${environment.apiUrl}/user/`;
-    this.body = {
-      "email": "nicolasgonzalezg6@gmail.com"
-    }
   }
 
   forgotPassword(email: string){

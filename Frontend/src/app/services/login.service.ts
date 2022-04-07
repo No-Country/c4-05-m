@@ -12,7 +12,8 @@ export class LoginService {
 
   constructor(
     private httpService: HttpConfigService,
-    private cookies: CookieService
+    private cookies: CookieService,
+    private router: Router
   ) { }
 
   // Login
@@ -20,11 +21,25 @@ export class LoginService {
     return this.httpService.post(environment.apiUrl + '/user/login', user);
   }
 
+  logOut() {
+    this.cookies.delete('token');
+    this.cookies.delete('userId');
+    this.router.navigateByUrl('/login')
+  }
+
   setToken(token: string) {
     this.cookies.set("token", token);
   }
   getToken() {
     return this.cookies.get("token");
+  }
+
+  setUserId(id: string) {
+    this.cookies.set('userId', id);
+  }
+
+  getUserId() {
+    return this.cookies.get('userId');
   }
 
 }

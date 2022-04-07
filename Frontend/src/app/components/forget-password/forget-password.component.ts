@@ -27,12 +27,9 @@ export class ForgetPasswordComponent implements OnInit {
   sendEmail() {
     return this.forgetPasswodService.forgotPassword(this.form.value.email).subscribe({
       next: () => {
-        console.log('Email enviado');
         this.dialog.open(Dialog1Component, {disableClose: false});
       },
-      error: (error) => {
-        console.log(error);
-      },
+      error: (error) => { },
     });
   }
 }
