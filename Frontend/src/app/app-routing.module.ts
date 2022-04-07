@@ -5,6 +5,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { LoginComponent } from './components/login/login.component';
 import { NavigationGuard } from './guards/navigation.guard';
 import { SessionGuard } from './guards/session.guard';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,12 @@ const routes: Routes = [
     component: ForgetPasswordComponent,
     canActivate: [SessionGuard],
     data: { animation: 'forgetPasswordPage' },
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent,
+    canActivate: [SessionGuard],
+    data: { animation: 'resetPasswordPage' },
   },
   { path: '**', pathMatch: 'full', redirectTo: '' },
 ];

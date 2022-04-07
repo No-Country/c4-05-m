@@ -25,11 +25,12 @@ export class ForgetPasswordComponent implements OnInit {
   ngOnInit() {}
 
   sendEmail() {
-    return this.forgetPasswodService.forgotPassword(this.form.value.email).subscribe({
-      next: () => {
-        this.dialog.open(Dialog1Component, {disableClose: false});
-      },
-      error: (error) => { },
-    });
+    return this.forgetPasswodService.forgotPassword(this.form.value.email)
+      .subscribe({
+        next: () => {
+          this.dialog.open(Dialog1Component, {disableClose: false});
+        },
+        error: (error) => { },
+      });
   }
 }
