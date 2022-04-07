@@ -29,10 +29,15 @@ export class LoginComponent implements OnInit {
   // Login clásico
 
   login() {
-    this.loginService.login(this.user).subscribe((data: any) => {
-      this.loginService.setToken(data.token);
-      this.cookies.set('username', this.user.username);
-      this.router.navigateByUrl('/home');
-    });
+    this.loginService.login(this.user)
+      .subscribe({
+        next: (resp: any) => {
+          console.log(resp);
+
+          this.loginService.setToken(resp.token);
+          this.cookies.set('username', this.user.username);
+          this.router.navigateByUrl('/home');
+        }
+      });
   }
 }
