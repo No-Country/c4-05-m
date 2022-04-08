@@ -101,6 +101,7 @@
         placeholder="Escribe un mensaje"
         [(ngModel)]="message"
         #inputMessage
+        (keydown.enter)="sendMessage(inputMessage.value)"
       />
       <img
         class="emoji-icon"
