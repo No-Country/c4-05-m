@@ -10,10 +10,12 @@
   margin-top: 1rem;
   display: inline-flex;
   align-items: center;
+}
+.back img {
   cursor: pointer;
 }
 .back span {
-  font-size: larger;
+  font-size: 1.5rem;
 }
 
 /* Saved */
