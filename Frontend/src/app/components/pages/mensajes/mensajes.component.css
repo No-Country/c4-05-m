@@ -175,7 +175,7 @@
 }
 .incoming-messages .message {
   display: inline-block;
-  transform: translateY(20px);
+  transform: translateY(5px);
   margin: 10px 5px;
   background: #afa9a9;
   padding: 10px;
