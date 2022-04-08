@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Global } from '../global';
+import { Observable } from 'rxjs';
+import { Params } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,8 @@ import { Global } from '../global';
 export class ForgetPasswordService {
 
   public url: string;
-  public body: {}
+  public body: {};
+
 
   constructor(private http: HttpClient) { 
 
@@ -19,10 +22,16 @@ export class ForgetPasswordService {
   }
 
   forgotPassword(){
-     return this.http.post(this.url + 'forgotPassword', this.body)
+     return this.http.post(this.url + 'forgotPassword/', this.body)
   }
 
-  resetPassword(password: string, confirmPassword: string) { //ver confirm
-    return this.http.post(this.url + 'resetpassword/', password)
+  resetPassword(token: string): Observable <any> {
+    return this.http.post(this.url + 'resetpassword/', token)
  }
+
+  newPassword(password: string, confirmPassword: string){
+    const newPassword = { password, confirmPassword };
+    return this.http.post(this.url + 'resetpassword/', newPassword)
+  }
+
 }
