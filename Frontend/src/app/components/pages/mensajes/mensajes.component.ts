@@ -11,9 +11,15 @@ export class MensajesComponent implements OnInit {
   @ViewChild('messagesBox')
   private myScrollContainer!: ElementRef;
 
+  viewEmojis: boolean;
+  message: string;
+
   constructor(
     private router: Router
-  ) { }
+  ) {
+    this.viewEmojis = false;
+    this.message = '';
+  }
 
   ngOnInit() {
     this.scrollToBottom();
@@ -31,6 +37,17 @@ export class MensajesComponent implements OnInit {
 
   goHome() {
     this.router.navigate(['/home']);
+  }
+
+  addEmoji(event: any) {
+    // console.log(event);
+
+    console.log(event.emoji.native);
+    this.message += event.emoji.native;
+
+    this.viewEmojis = false;
+
+
   }
 
 }

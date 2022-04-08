@@ -4,7 +4,11 @@
 <div class="container">
   <!-- Back -->
   <div class="back">
-    <img src="assets/images/icons/left_arrow.png" alt="" (click)="goHome()" /><span>Mensajes</span>
+    <img
+      src="assets/images/icons/left_arrow.png"
+      alt=""
+      (click)="goHome()"
+    /><span>Mensajes</span>
   </div>
 
   <!-- Messages container -->
@@ -97,9 +101,24 @@
         </div>
       </div>
 
-      <input type="text" placeholder="Escribe un mensaje" />
-      <img class="emoji-icon" src="assets/images/icons/emoji_smile.png" alt="" />
-      <img src="assets/images/icons/Paper_Plane.png" alt="" class="send-icon">
+      <input type="text" placeholder="Escribe un mensaje" [(ngModel)]="message" />
+      <img
+        class="emoji-icon"
+        src="assets/images/icons/emoji_smile.png"
+        alt=""
+        (click)="viewEmojis = !viewEmojis"
+      />
+      <img src="assets/images/icons/Paper_Plane.png" alt="" class="send-icon" />
     </div>
   </div>
 </div>
+
+<!-- Emojis -->
+<emoji-mart
+  *ngIf="viewEmojis"
+  title="Pick your emoji…"
+  emoji="point_up"
+  set="apple"
+  (emojiClick)="addEmoji($event)"
+  [style]="{ position: 'absolute', bottom: '20px', right: '20px' }"
+></emoji-mart>

@@ -7,7 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { GuardadasComponent } from './guardadas/guardadas.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
-
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { MensajesComponent } from './mensajes/mensajes.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    PickerModule,
+    FormsModule
   ],
   exports: []
 })
