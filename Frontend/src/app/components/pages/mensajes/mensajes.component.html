@@ -37,9 +37,14 @@
         <div class="wrapper">
           <span class="user-name">Camila Romib</span>
           <br />
-          <span><small>Si! Ahí estaba, recién...</small></span>
+          <span *ngIf="user">
+            <small>Hola! Cómo estás...</small>
+          </span>
+          <span *ngIf="!user">
+            <small>...</small>
+          </span>
         </div>
-        <div class="connection-indicator active"></div>
+        <div class="connection-indicator" [ngClass]="{'active': user, 'unreaded': !user}"></div>
       </div>
 
       <!-- Active messages item 3 -->
