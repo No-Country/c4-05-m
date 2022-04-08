@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,25 @@ import { Router } from '@angular/router';
 })
 export class MensajesComponent implements OnInit {
 
+  @ViewChild('messagesBox')
+  private myScrollContainer!: ElementRef;
+
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.scrollToBottom();
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+      try {
+          this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+      } catch(err) { }
   }
 
   goHome() {
