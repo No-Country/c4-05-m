@@ -171,6 +171,7 @@
 }
 .incoming-messages img, .outcoming-messages img {
   width: 48px;
+  height: 48px;
 }
 .incoming-messages .message {
   display: inline-block;

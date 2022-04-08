@@ -76,39 +76,34 @@
         </div>
       </div>
       <div class="messages-box" #messagesBox>
-        <div class="outcoming-messages">
-          <span class="message"> Preguntaste en Isadora? </span>
-          <img src="assets/images/avatar/Marina.png" alt="" />
-        </div>
-        <div class="incoming-messages">
-          <img src="assets/images/avatar/Camila.png" alt="" />
-          <span class="message"> Sí, y tampoco. </span>
-        </div>
-        <div class="outcoming-messages">
-          <span class="message"> Y en Lazaro? </span>
-          <img src="assets/images/avatar/Marina.png" alt="" />
-        </div>
-        <div class="incoming-messages">
+        <div class="incoming-messages" *ngIf="user">
           <img src="assets/images/avatar/Camila.png" alt="" />
           <span class="message">
-            Sí! ahí estaba recién vengo, ya la compré. <br />
-            Fue amor a primera vista! Gracias!
+            Hola! Cómo estás {{ user.firstName }}?
           </span>
         </div>
-        <div class="outcoming-messages">
-          <span class="message"> Ok... </span>
-          <img src="assets/images/avatar/Marina.png" alt="" />
+        <div
+          *ngFor="let outcomingMessage of outcomingMessages"
+          class="outcoming-messages"
+        >
+          <span class="message"> {{ outcomingMessage.message }} </span>
+          <img [src]="outcomingMessage.userImg" alt="" style="border-radius: 100%;" />
         </div>
       </div>
 
-      <input type="text" placeholder="Escribe un mensaje" [(ngModel)]="message" />
+      <input
+        type="text"
+        placeholder="Escribe un mensaje"
+        [(ngModel)]="message"
+        #inputMessage
+      />
       <img
         class="emoji-icon"
         src="assets/images/icons/emoji_smile.png"
         alt=""
         (click)="viewEmojis = !viewEmojis"
       />
-      <img src="assets/images/icons/Paper_Plane.png" alt="" class="send-icon" />
+      <img src="assets/images/icons/Paper_Plane.png" alt="" class="send-icon" (click)="sendMessage(inputMessage.value)" />
     </div>
   </div>
 </div>
