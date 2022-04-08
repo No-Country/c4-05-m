@@ -16,7 +16,11 @@
         <p><small>Hace 2h</small></p>
       </div>
     </div>
-    <img src="assets/images/feed-inicio/nati-melnychuk-oO0JAOJhquk-unsplash.jpg" class="post-image" alt="" />
+    <img
+      src="assets/images/feed-inicio/nati-melnychuk-oO0JAOJhquk-unsplash.jpg"
+      class="post-image"
+      alt=""
+    />
     <div class="actions">
       <img src="assets/images/icons/up_arrow.png" alt="" class="arrow-up" />
       <img src="assets/images/icons/down_arrow.png" alt="" class="arrow-down" />
@@ -44,7 +48,11 @@
         <p><small>Hace 6h</small></p>
       </div>
     </div>
-    <img src="assets/images/feed-inicio/danilo-capece-NoVnXXmDNi0-unsplash.jpg" class="post-image" alt="" />
+    <img
+      src="assets/images/feed-inicio/danilo-capece-NoVnXXmDNi0-unsplash.jpg"
+      class="post-image"
+      alt=""
+    />
     <div class="actions">
       <img src="assets/images/icons/up_arrow.png" alt="" class="arrow-up" />
       <img src="assets/images/icons/down_arrow.png" alt="" class="arrow-down" />
@@ -59,17 +67,23 @@
 
 <!-- Shortcuts -->
 <div class="shortcuts">
-  <img src="assets/images/icons/Favorite.png" alt="" [routerLink]="['/guardadas']">
-  <img src="assets/images/icons/Add_New.png" alt="" class="add-new-icon">
-  <img src="assets/images/icons/chat.png" alt="">
+  <img
+    src="assets/images/icons/Favorite.png"
+    alt=""
+    [routerLink]="['/guardadas']"
+  />
+  <img src="assets/images/icons/Add_New.png" alt="" class="add-new-icon" />
+  <img src="assets/images/icons/chat.png" alt="" [routerLink]="['/mensajes']" />
 </div>
 
 <!-- Suggestions -->
 <div class="suggestions" *ngIf="suggestions.length">
   <p class="suggestions-title">Sugerencias para ti</p>
   <div class="suggestion" *ngFor="let suggestion of suggestions; let i = index">
-    <img [src]="suggestion['img']" alt="Suggestion {{i + 1}}">
-    <span class="suggestion-name">{{ suggestion['firstName'] }}&nbsp;{{ suggestion['lastName'] }}</span>
+    <img [src]="suggestion['img']" alt="Suggestion {{ i + 1 }}" />
+    <span class="suggestion-name"
+      >{{ suggestion["firstName"] }}&nbsp;{{ suggestion["lastName"] }}</span
+    >
     <span class="follow">Seguir</span>
   </div>
 </div>

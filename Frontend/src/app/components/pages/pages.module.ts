@@ -6,6 +6,7 @@ import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { GuardadasComponent } from './guardadas/guardadas.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MensajesComponent } from './mensajes/mensajes.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
     PagesComponent,
     HomeComponent,
     GuardadasComponent,
-    HeaderComponent
+    HeaderComponent,
+    MensajesComponent
   ],
   imports: [
     CommonModule,
