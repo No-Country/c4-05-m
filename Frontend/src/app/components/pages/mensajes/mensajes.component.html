@@ -26,7 +26,7 @@
         <div class="wrapper">
           <span class="user-name">Joaquín Lewis</span>
           <br />
-          <span><small>No a la chaqueta...</small></span>
+          <span class="message-preview"><small>{{('No a la chaqueta verde con botones azules y flecos!') | slice:0:15}}...</small></span>
         </div>
         <div class="connection-indicator unreaded"></div>
       </div>
@@ -37,8 +37,8 @@
         <div class="wrapper">
           <span class="user-name">Camila Romib</span>
           <br />
-          <span *ngIf="user">
-            <small>Hola! Cómo estás...</small>
+          <span *ngIf="user" class="message-preview">
+            <small>{{('Hola! Cómo estás ' + user.firstName + '?') | slice:0:15}}...</small>
           </span>
           <span *ngIf="!user">
             <small>...</small>
@@ -53,7 +53,7 @@
         <div class="wrapper">
           <span class="user-name">Pedro Carres</span>
           <br />
-          <span><small>No iré a ese evento...</small></span>
+          <span class="message-preview"><small>{{('No iré a ese evento, porque no me he podido preparar con tiempo...') | slice:0:15}}...</small></span>
         </div>
         <div class="connection-indicator readed"></div>
       </div>
@@ -64,7 +64,7 @@
         <div class="wrapper">
           <span class="user-name">Lina Grante</span>
           <br />
-          <span><small>El desfile era...</small></span>
+          <span class="message-preview"><small>{{('El desfile era a las 10 y media. Eso creo...') | slice:0:15}}...</small></span>
         </div>
         <div class="connection-indicator readed"></div>
       </div>

@@ -132,7 +132,8 @@
   width: 24px;
   cursor: pointer;
 }
-.chat-user {}
+.chat-user {
+}
 .chat-user img {
   position: absolute;
   top: 10px;
@@ -169,7 +170,8 @@
   margin-top: 10px;
   align-self: flex-end;
 }
-.incoming-messages img, .outcoming-messages img {
+.incoming-messages img,
+.outcoming-messages img {
   width: 48px;
   height: 48px;
 }
