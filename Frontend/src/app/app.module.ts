@@ -12,13 +12,15 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { LoginService } from './services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ForgetPasswordService } from './services/forget-password.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

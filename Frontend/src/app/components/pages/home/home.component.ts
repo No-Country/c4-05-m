@@ -1,4 +1,4 @@
-import { environment } from './../../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { HttpConfigService } from '../../../services/http-config.service';

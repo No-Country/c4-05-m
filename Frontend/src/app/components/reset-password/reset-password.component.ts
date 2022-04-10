@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ForgetPasswordService } from '../../services/forget-password.service';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ChangePasswordDto } from 'src/app/models/change-password-dto';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,38 +10,34 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  public form: FormGroup;
   password: string;
-  confirmPassword: string;
+  passwordConfirm: string;
   token: string;
 
+  dto: ChangePasswordDto;
+
   constructor(
-    private fb: FormBuilder,
     private forgetPasswordService: ForgetPasswordService,
     private router: Router,
     private activatedRoute: ActivatedRoute
 
   ) {
     this.password = "";
-    this.confirmPassword = "";
+    this.passwordConfirm = "";
     this.token = "";
-    this.form = this.fb.group({
-      password: [''],
-      confirmPassword: [''],
-    })
+    this.dto = new ChangePasswordDto('', '')
   }
 
-  ngOnInit(){
-    
-    }
+  ngOnInit(){ }
   
   onReset(): void{
-    if(this.password !== this.confirmPassword){
+    if(this.password !== this.passwordConfirm){
       alert('Las contraseñas no coinciden')
       return;
     }
     this.token = this.activatedRoute.snapshot.params['token'];
-    this.forgetPasswordService.newPassword(this.form.value.password, this.form.value.confirmPassword)
+    this.dto = new ChangePasswordDto(this.password, this.passwordConfirm)
+    this.forgetPasswordService.resetPassword(this.dto)
     .subscribe({
       next: () => {
         this.router.navigate(['/login'])
@@ -50,4 +46,3 @@ export class ResetPasswordComponent implements OnInit {
     });
   }
 }
-
