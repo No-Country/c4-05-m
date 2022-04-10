@@ -10,6 +10,7 @@ import { ForgetPasswordService } from 'src/app/services/forget-password.service'
 export class ForgetPasswordComponent implements OnInit {
   
   public form: FormGroup;
+  public body: string;
 
   constructor(
     private forgetPasswodService: ForgetPasswordService,
@@ -18,13 +19,14 @@ export class ForgetPasswordComponent implements OnInit {
     this.form = this.formBuilder.group({
       email: ['']
     });
+    this.body = "";
   }
 
   ngOnInit(){
   }
 
   sendEmail() {
-    return this.forgetPasswodService.forgotPassword().subscribe({
+    return this.forgetPasswodService.forgotPassword(this.body).subscribe({
       next: () => console.log('Email enviado'),
       error: error => console.log(error)
     });
