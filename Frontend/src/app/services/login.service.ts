@@ -16,14 +16,19 @@ export class LoginService {
     private http: HttpClient,
     private cookies: CookieService,
     private router: Router
-
   ) {
     this.url = Global.url;
    }
 
-  // Login 
+  // Login
   login(user: any): Observable<any> {
-    return this.http.post(this.url + 'login', user);
+    return this.http.post(this.url + '/user/login', user);
+  }
+
+  logOut() {
+    this.cookies.delete('token');
+    this.cookies.delete('userId');
+    this.router.navigateByUrl('/login')
   }
 
   setToken(token: string) {
@@ -33,9 +38,12 @@ export class LoginService {
     return this.cookies.get("token");
   }
 
-  logOut(){ // Éste método va en el Home
-    this.cookies.delete('token');
-    this.router.navigateByUrl('/login')
+  setUserId(id: string) {
+    this.cookies.set('userId', id);
   }
- 
+
+  getUserId() {
+    return this.cookies.get('userId');
+  }
+
 }

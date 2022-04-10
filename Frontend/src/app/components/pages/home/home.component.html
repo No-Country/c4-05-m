@@ -1,0 +1,89 @@
+<!-- Header -->
+<app-header></app-header>
+
+<!-- Post 1 -->
+<div class="posts-container">
+  <div class="posts">
+    <div class="post">
+      <img src="assets/images/avatar/lina.png" class="img-rounded" alt="" />
+      <p class="user">
+        <span class="name">Lina Grante</span> -
+        <small><span class="username">lina.gran</span></small
+        ><br />
+        <small>Dónde puedo encontrar este modelo de pulsera?</small>
+      </p>
+      <div class="elapsed">
+        <p><small>Hace 2h</small></p>
+      </div>
+    </div>
+    <img
+      src="assets/images/feed-inicio/nati-melnychuk-oO0JAOJhquk-unsplash.jpg"
+      class="post-image"
+      alt=""
+    />
+    <div class="actions">
+      <img src="assets/images/icons/up_arrow.png" alt="" class="arrow-up" />
+      <img src="assets/images/icons/down_arrow.png" alt="" class="arrow-down" />
+      <img src="assets/images/icons/chat1.png" alt="" class="chat-icon" />
+      <div class="favorites">
+        <span class="favorite-counter">15</span>
+        <img src="assets/images/icons/Favorite.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Post 2 -->
+<div class="posts-container">
+  <div class="posts">
+    <div class="post">
+      <img src="assets/images/avatar/joaquin.png" class="img-rounded" alt="" />
+      <p class="user">
+        <span class="name">Joaquín Lewis</span> -
+        <small><span class="username">joa.lw</span></small
+        ><br />
+        <small>Fotografía de producto</small>
+      </p>
+      <div class="elapsed">
+        <p><small>Hace 6h</small></p>
+      </div>
+    </div>
+    <img
+      src="assets/images/feed-inicio/danilo-capece-NoVnXXmDNi0-unsplash.jpg"
+      class="post-image"
+      alt=""
+    />
+    <div class="actions">
+      <img src="assets/images/icons/up_arrow.png" alt="" class="arrow-up" />
+      <img src="assets/images/icons/down_arrow.png" alt="" class="arrow-down" />
+      <img src="assets/images/icons/chat1.png" alt="" class="chat-icon" />
+      <div class="favorites">
+        <span class="favorite-counter">10</span>
+        <img src="assets/images/icons/Favorite.png" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shortcuts -->
+<div class="shortcuts">
+  <img
+    src="assets/images/icons/Favorite.png"
+    alt=""
+    [routerLink]="['/guardadas']"
+  />
+  <img src="assets/images/icons/Add_New.png" alt="" class="add-new-icon" />
+  <img src="assets/images/icons/chat.png" alt="" [routerLink]="['/mensajes']" />
+</div>
+
+<!-- Suggestions -->
+<div class="suggestions" *ngIf="suggestions.length">
+  <p class="suggestions-title">Sugerencias para ti</p>
+  <div class="suggestion" *ngFor="let suggestion of suggestions; let i = index">
+    <img [src]="suggestion['img']" alt="Suggestion {{ i + 1 }}" />
+    <span class="suggestion-name"
+      >{{ suggestion["firstName"] }}&nbsp;{{ suggestion["lastName"] }}</span
+    >
+    <span class="follow">Seguir</span>
+  </div>
+</div>
