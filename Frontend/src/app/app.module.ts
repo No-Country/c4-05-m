@@ -34,4 +34,4 @@ import { ForgetPasswordService } from './services/forget-password.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

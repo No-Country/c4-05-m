@@ -1,0 +1,125 @@
+<app-header></app-header>
+
+<!-- Messages -->
+<div class="container">
+  <!-- Back -->
+  <div class="back">
+    <img
+      src="assets/images/icons/left_arrow.png"
+      alt=""
+      (click)="goHome()"
+    /><span>Mensajes</span>
+  </div>
+
+  <!-- Messages container -->
+  <div class="messages-container">
+    <!-- Active messages -->
+    <div class="active-messages">
+      <!-- Active messages header -->
+      <div class="active-messages-header">
+        <span> Chats activos </span>
+        <img src="assets/images/icons/add_chat.png" alt="" />
+      </div>
+      <!-- Active messages item 1 -->
+      <div class="active-messages-item">
+        <img src="assets/images/avatar/joaquin.png" alt="" />
+        <div class="wrapper">
+          <span class="user-name">Joaquín Lewis</span>
+          <br />
+          <span class="message-preview"><small>{{('No a la chaqueta verde con botones azules y flecos!') | slice:0:15}}...</small></span>
+        </div>
+        <div class="connection-indicator unreaded"></div>
+      </div>
+
+      <!-- Active messages item 2 -->
+      <div class="active-messages-item">
+        <img src="assets/images/avatar/Camila.png" alt="" />
+        <div class="wrapper">
+          <span class="user-name">Camila Romib</span>
+          <br />
+          <span *ngIf="user" class="message-preview">
+            <small>{{('Hola! Cómo estás ' + user.firstName + '?') | slice:0:15}}...</small>
+          </span>
+          <span *ngIf="!user">
+            <small>...</small>
+          </span>
+        </div>
+        <div class="connection-indicator" [ngClass]="{'active': user, 'unreaded': !user}"></div>
+      </div>
+
+      <!-- Active messages item 3 -->
+      <div class="active-messages-item">
+        <img src="assets/images/avatar/pedro.png" alt="" />
+        <div class="wrapper">
+          <span class="user-name">Pedro Carres</span>
+          <br />
+          <span class="message-preview"><small>{{('No iré a ese evento, porque no me he podido preparar con tiempo...') | slice:0:15}}...</small></span>
+        </div>
+        <div class="connection-indicator readed"></div>
+      </div>
+
+      <!-- Active messages item 4 -->
+      <div class="active-messages-item">
+        <img src="assets/images/avatar/lina.png" alt="" />
+        <div class="wrapper">
+          <span class="user-name">Lina Grante</span>
+          <br />
+          <span class="message-preview"><small>{{('El desfile era a las 10 y media. Eso creo...') | slice:0:15}}...</small></span>
+        </div>
+        <div class="connection-indicator readed"></div>
+      </div>
+    </div>
+
+    <div class="the-messages">
+      <div class="the-messages-header">
+        <div class="chat-user">
+          <img src="assets/images/avatar/Camila.png" alt="" />
+          <div class="user-information">
+            <span class="full-user-name">Camila Romib - </span
+            ><span class="username"><small>@cami_ro</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="messages-box" #messagesBox>
+        <div class="incoming-messages" *ngIf="user">
+          <img src="assets/images/avatar/Camila.png" alt="" />
+          <span class="message">
+            Hola! Cómo estás {{ user.firstName }}?
+          </span>
+        </div>
+        <div
+          *ngFor="let outcomingMessage of outcomingMessages"
+          class="outcoming-messages"
+        >
+          <span class="message"> {{ outcomingMessage.message }} </span>
+          <img [src]="outcomingMessage.userImg" alt="" style="border-radius: 100%;" />
+        </div>
+      </div>
+
+      <input
+        type="text"
+        placeholder="Escribe un mensaje"
+        [(ngModel)]="message"
+        #inputMessage
+        (keydown.enter)="sendMessage(inputMessage.value)"
+      />
+      <img
+        class="emoji-icon"
+        src="assets/images/icons/emoji_smile.png"
+        alt=""
+        (click)="viewEmojis = !viewEmojis"
+      />
+      <img src="assets/images/icons/Paper_Plane.png" alt="" class="send-icon" (click)="sendMessage(inputMessage.value)" />
+    </div>
+  </div>
+</div>
+
+<!-- Emojis -->
+<emoji-mart
+  *ngIf="viewEmojis"
+  title="Pick your emoji…"
+  emoji="point_up"
+  set="apple"
+  (emojiClick)="addEmoji($event)"
+  [style]="{ position: 'absolute', bottom: '20px', right: '20px' }"
+></emoji-mart>
