@@ -3,6 +3,7 @@ import { LoginService } from './../../../services/login.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-mensajes',
@@ -23,8 +24,10 @@ export class MensajesComponent implements OnInit {
   constructor(
     private router: Router,
     private loginService: LoginService,
-    private httpService: HttpConfigService
+    private httpService: HttpConfigService,
+    private _title: Title
   ) {
+    this._title.setTitle('Fashion Hunter - Mensajes');
     this.viewEmojis = false;
     this.message = '';
   }
