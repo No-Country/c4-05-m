@@ -12,11 +12,11 @@ export class PagesComponent implements OnInit {
 
   constructor(private contexts: ChildrenOutletContexts) {}
 
-  getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
 }

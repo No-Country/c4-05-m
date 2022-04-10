@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, Title } from '@angular/platform-browser';
-import { HttpConfigService } from '../../services/http-config.service';
-import { environment } from '../../../environments/environment';
+import { HttpConfigService } from '../../../services/http-config.service';
+import { environment } from '../../../../environments/environment';
 import {MatDialog} from '@angular/material/dialog';
-import { DialogComponent } from '../../modules/shared/dialog/dialog.component';
+import { DialogComponent } from '../../../modules/shared/dialog/dialog.component';
 
 const userData = new FormData();
 

@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CrearCuentaComponent } from './components/crear-cuenta/crear-cuenta.component';
-import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
-import { LoginComponent } from './components/login/login.component';
 import { NavigationGuard } from './guards/navigation.guard';
 import { SessionGuard } from './guards/session.guard';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -15,28 +11,11 @@ const routes: Routes = [
     canActivate: [NavigationGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [SessionGuard],
-    data: { animation: 'loginPage' },
-  },
-  {
-    path: 'crear-cuenta',
-    component: CrearCuentaComponent,
-    canActivate: [SessionGuard],
-    data: { animation: 'crearCuentaPage' },
-  },
-  {
-    path: 'forget-password',
-    component: ForgetPasswordComponent,
-    canActivate: [SessionGuard],
-    data: { animation: 'forgetPasswordPage' },
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordComponent,
-    canActivate: [SessionGuard],
-    data: { animation: 'resetPasswordPage' },
+    path: '',
+    loadChildren: () =>
+      import('./components/session/session.module').then(
+        (m) => m.SessionModule
+      ), canActivate: [SessionGuard]
   },
   { path: '**', pathMatch: 'full', redirectTo: '' },
 ];

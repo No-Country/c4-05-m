@@ -22,7 +22,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     PagesRoutingModule,
     PickerModule,
-    FormsModule
+    FormsModule,
   ],
   exports: []
 })
