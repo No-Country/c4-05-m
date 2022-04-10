@@ -6,6 +6,9 @@
 /Frontend/out-tsc
 /Frontend/bazel-out
 
+# Style
+/Frontend/sass
+
 # Node
 /Frontend/node_modules
 /Frontend/npm-debug.log
