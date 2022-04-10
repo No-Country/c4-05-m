@@ -19,8 +19,6 @@
 }
 
 /* Contenedor */
-.messages-container {
-}
 
 /* Active messages */
 .active-messages {
@@ -131,8 +129,6 @@
   transform: translateX(25px) translateY(-25px);
   width: 24px;
   cursor: pointer;
-}
-.chat-user {
 }
 .chat-user img {
   position: absolute;
