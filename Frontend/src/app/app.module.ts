@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,6 +16,9 @@ import { LoginService } from './services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ForgetPasswordService } from './services/forget-password.service';
 import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
+import { MensajesComponent } from './components/mensajes/mensajes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,15 +28,19 @@ import { ProfileComponent } from './components/profile/profile.component';
     ResetPasswordComponent,
     ProfileComponent,
     HeaderComponent,
-    GuardadasComponent
+    GuardadasComponent,
+    HomeComponent,
+    MensajesComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    PickerModule
   ],
   providers: [
     LoginService,

@@ -1,8 +1,8 @@
 body {
-  background: var(--background-color);
+  background: var(#e5e5e5);
 }
 .container {
-  color: var(--primary-color);
+  color: var(#7f1f71);
   text-align: center;
 }
 .actions {
@@ -12,7 +12,7 @@ body {
 .actions button {
   margin: 30px;
   color: white;
-  background: var(--secondary-color);
+  background: var(#ec46a1);
   border-radius: 10px;
   width: 10rem;
   height: 2rem;

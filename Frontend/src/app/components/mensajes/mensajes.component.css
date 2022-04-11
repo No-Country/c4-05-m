@@ -84,10 +84,10 @@
   border-radius: 100%;
 }
 .connection-indicator.unreaded {
-  background: var(--secondary-color);
+  background: var(#ec46a1);
 }
 .connection-indicator.active {
-  background: var(--primary-color);
+  background: var(#7f1f71);
 }
 .connection-indicator.readed {
   background: transparent;
@@ -118,7 +118,7 @@
   margin: 20px;
   outline: none;
   padding: 10px 0px 10px 35px;
-  background: var(--background-color);
+  background: var(#e5e5e5);
 }
 .the-messages input:content {
   transform: translateX(25px);

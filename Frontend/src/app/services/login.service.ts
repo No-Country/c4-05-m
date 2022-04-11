@@ -22,7 +22,7 @@ export class LoginService {
 
   // Login
   login(user: any): Observable<any> {
-    return this.http.post(this.url + '/user/login', user);
+    return this.http.post(this.url + '/login', user);
   }
 
   logOut() {

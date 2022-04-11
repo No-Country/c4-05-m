@@ -7,9 +7,9 @@
   height: 5rem;
   background: linear-gradient(
     to right,
-    var(--tertiary-color),
-    var(--other-color-1),
-    var(--secondary-color)
+    #f9feec,
+    #f55c3d,
+    #ec46a1
   );
   z-index: 1;
 }
@@ -20,9 +20,9 @@
   width: 150px;
 }
 .right p {
-  font-family: var(--secondary-font);
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
-  color: var(--background-color);
+  color: #e5e5e5;
   margin-top: 10px;
   margin-right: 4px;
   position: absolute;
@@ -48,12 +48,12 @@
 h1 {
   display: inline;
   margin-top: 0px;
-  font-family: var(--primary-font);
+  font-family: "Pacifico", cursive;
   font-style: normal;
   font-weight: 400;
   font-size: 38.88px;
   line-height: 5rem;
-  color: var(--primary-color);
+  color: #7f1f71;
   margin-left: 49.41px;
   cursor: pointer;
 }
