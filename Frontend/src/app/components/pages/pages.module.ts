@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { FormsModule } from '@angular/forms';
+import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     GuardadasComponent,
     HeaderComponent,
-    MensajesComponent
+    MensajesComponent,
+    CrearPublicacionComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Crear publicación</h2>
+  <div class="linea-horizontal"></div>
+  <img src="assets/images/icons/Vector.png" alt="">
+  <p>Arrastra aquí una foto</p>
+  <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+  <button (click)="fileUpload.click()">Selecciona del ordenador</button>
+  <div class="linea-horizontal"></div>
+</div>
