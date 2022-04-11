@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { ChangePasswordDto } from '../models/change-password-dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ForgetPasswordService {
 

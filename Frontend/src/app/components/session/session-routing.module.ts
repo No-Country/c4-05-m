@@ -5,6 +5,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { LoginComponent } from './login/login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { SessionComponent } from './session.component';
+import { ResetPasswordTokenComponent } from './reset-password-token/reset-password-token.component';
 
 const routes: Routes = [
   { path: '', component: SessionComponent },
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'reset-password',
     component: ResetPasswordComponent,
     data: { animation: 'resetPasswordPage' },
+  },
+  {
+    path: 'reset-password/:emailToken',
+    component: ResetPasswordTokenComponent,
+    data: { animation: 'resetPasswordTokenPage' },
   },
 ];
 
