@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ForgetPasswordService } from '../../../services/forget-password.service';
+import { MatDialog } from '@angular/material/dialog';
+import { Dialog2Component } from 'src/app/modules/shared/dialog2/dialog2.component';
 
 @Component({
   selector: 'app-reset-password',
@@ -12,7 +14,8 @@ export class ResetPasswordComponent implements OnInit {
   passwordConfirm: string = '';
 
   constructor(
-    private forgetPassService: ForgetPasswordService
+    private forgetPassService: ForgetPasswordService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +33,7 @@ export class ResetPasswordComponent implements OnInit {
       .subscribe({
         next: (resp: any) => {
           console.log(resp);
+          this.dialog.open(Dialog2Component, {disableClose: true});
 
         },
         error: (error: any) => {
