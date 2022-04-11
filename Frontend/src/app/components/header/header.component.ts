@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
-import { HttpConfigService } from '../../../../services/http-config.service';
-import { LoginService } from '../../../../services/login.service';
+import { HttpConfigService } from '../../services/http-config.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-header',
