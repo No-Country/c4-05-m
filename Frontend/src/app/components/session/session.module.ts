@@ -8,6 +8,7 @@ import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ResetPasswordTokenComponent } from './reset-password-token/reset-password-token.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     CrearCuentaComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ResetPasswordTokenComponent
   ],
   imports: [
     CommonModule,
