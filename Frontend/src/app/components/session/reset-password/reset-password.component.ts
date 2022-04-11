@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ForgetPasswordService } from '../../../services/forget-password.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Dialog2Component } from 'src/app/modules/shared/dialog2/dialog2.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-reset-password',
@@ -15,8 +16,11 @@ export class ResetPasswordComponent implements OnInit {
 
   constructor(
     private forgetPassService: ForgetPasswordService,
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    private _title: Title
+  ) {
+    this._title.setTitle('Fashion Hunter - Reset Password');
+  }
 
   ngOnInit(): void {
   }
