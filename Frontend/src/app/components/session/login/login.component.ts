@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService,
     public router: Router,
     private _title: Title,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this._title.setTitle('Fashion Hunter - Login');

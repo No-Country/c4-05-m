@@ -16,7 +16,7 @@ export class Dialog2Component implements OnInit {
   }
 
   goLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigateByUrl('/login');
   }
 
 }
