@@ -22,14 +22,17 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onReset() {
-    const raw = {
-      'password': this.password,
-      'passwordConfirm': this.passwordConfirm
-    };
 
-    const strRaw = JSON.stringify(raw);
+    if (this.password === this.passwordConfirm) {
 
-    this.forgetPassService.resetPassword(strRaw)
+      const raw = {
+        'password': this.password,
+        'passwordConfirm': this.passwordConfirm
+      };
+
+      const strRaw = JSON.stringify(raw);
+
+      this.forgetPassService.resetPassword(strRaw)
       .subscribe({
         next: (resp: any) => {
           console.log(resp);
@@ -45,6 +48,10 @@ export class ResetPasswordComponent implements OnInit {
 
         }
       });
+    } else {
+      console.log('Las contraseñas no coinciden');
+
+    }
   }
 
 }

@@ -10,13 +10,16 @@ export class HttpConfigService {
   private _headers!: HttpHeaders;
 
   constructor(private http: HttpClient, private cookies: CookieService) {
+
+    const theToken = this.cookies.check('token')
+    ? this.cookies.get('token')
+    : this.cookies.get('emailToken');
+
     // Aquí se setean los headers
     this._headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization:
-        'Bearer ' + this.cookies.check('token')
-          ? this.cookies.get('token')
-          : this.cookies.get('emailToken'),
+      'Authorization':
+        'Bearer ' + theToken,
     });
   }
 
