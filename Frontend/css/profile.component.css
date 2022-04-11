@@ -1,0 +1,10 @@
+.encabezado {
+    display: flex;
+    align-items: center;
+    width: 1512px;
+    height: 118px;
+    left: 1512px;
+    top: 118px;
+    background: linear-gradient(83deg, #f1f3fb 0%, #ebebeb 24%, #f08570 44%, #ec46a1 100%);
+    margin-bottom: 20px;
+}

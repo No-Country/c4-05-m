@@ -1,0 +1,153 @@
+<div class="title">
+  <h1>Fashion Hunter</h1>
+</div>
+<form class="container" (ngSubmit)="crearCuenta()" #newUserForm="ngForm">
+  <div class="subtitle">
+    <h2>Crear cuenta</h2>
+    <div>
+      <img [src]="previsualizacion" alt="" (click)="fileUpload.click()" />
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="flex-item">
+      <h3>Datos Personales</h3>
+      <div class="line-right">
+        <input
+          [(ngModel)]="firstName"
+          name="firstName"
+          type="text"
+          placeholder="Nombre"
+          autocomplete="off"
+          required
+          #nombre="ngModel"
+        />
+        <div [hidden]="nombre.valid || nombre.pristine" class="input-error">
+          <small>Complete este campo</small>
+        </div>
+        <br />
+        <input
+          [(ngModel)]="lastName"
+          name="lastName"
+          type="text"
+          placeholder="Apellido"
+          autocomplete="off"
+          required
+          #apellido="ngModel"
+        />
+        <div [hidden]="apellido.valid || apellido.pristine" class="input-error">
+          <small>Complete este campo</small>
+        </div>
+        <br />
+        <input
+          [(ngModel)]="username"
+          name="username"
+          type="text"
+          placeholder="Usuario"
+          autocomplete="off"
+          required
+          #nombreUsuario="ngModel"
+        />
+        <div
+          [hidden]="nombreUsuario.valid || nombreUsuario.pristine"
+          class="input-error"
+        >
+          <small>Complete este campo</small>
+        </div>
+        <br />
+        <input
+          [(ngModel)]="email"
+          name="email"
+          type="email"
+          placeholder="Email"
+          autocomplete="off"
+          required
+          #correoElectronico="ngModel"
+        />
+        <div
+          [hidden]="correoElectronico.valid || correoElectronico.pristine"
+          class="input-error"
+        >
+          <small>Complete este campo</small>
+        </div>
+        <br />
+        <input
+          [(ngModel)]="password"
+          name="password"
+          type="password"
+          placeholder="Contraseña"
+          autocomplete="off"
+          required
+          #contrasenia="ngModel"
+        />
+        <div
+          [hidden]="contrasenia.valid || contrasenia.pristine"
+          class="input-error"
+        >
+          <small>Complete este campo</small>
+        </div>
+        <br />
+        <input
+          [(ngModel)]="passwordConfirm"
+          name="passwordConfirm"
+          type="password"
+          placeholder="Confirmar contraseña"
+          autocomplete="off"
+          required
+          #confirmarContrasenia="ngModel"
+        />
+        <div
+          [hidden]="confirmarContrasenia.valid || confirmarContrasenia.pristine"
+          class="input-error"
+        >
+          <small>Complete este campo</small>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <h3>Foto de perfil</h3>
+      <div class="photo-selection">
+        <!-- <p>
+          Nos encantaría conocerte, pero también puedes elegir un avatar
+          temporario.
+        </p> -->
+        <!-- : -->
+        <p>Nos encantaría conocerte, elige una imagen a continuación.</p>
+        <!-- : -->
+        <div class="flex-container profile-photos">
+          <!-- <div class="flex-item" *ngFor="let img of predefinedImgs; let i = index">
+            <img
+              *ngIf="i < 6"
+              [src]="img.img"
+              [alt]="i"
+            />
+          </div> -->
+          <!-- : -->
+          <div class="flex-item" *ngIf="previsualizacion">
+            <img [src]="previsualizacion" alt="" (click)="fileUpload.click()" />
+          </div>
+          <!-- : -->
+        </div>
+        <div class="upload-photo">
+          <input
+            type="file"
+            class="file-input"
+            (change)="onFileSelected($event)"
+            #fileUpload
+          />
+          <button (click)="fileUpload.click()">
+            <i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i>
+            Subir archivo
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex-item go">
+      <button
+        type="submit"
+        [disabled]="!newUserForm.form.valid"
+      >
+        Vamos allá!
+      </button>
+    </div>
+  </div>
+</form>
