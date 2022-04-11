@@ -12,6 +12,10 @@ import { fadeInAnimation } from './modules/shared/animations/animations';
 export class AppComponent {
   constructor(private contexts: ChildrenOutletContexts) {}
 
+
+  ngOnInit(): void {
+  }
+
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }

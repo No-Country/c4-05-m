@@ -1,5 +1,5 @@
-import { HttpConfigService } from './../../../services/http-config.service';
-import { LoginService } from './../../../services/login.service';
+import { HttpConfigService } from '../../services/http-config.service';
+import { LoginService } from '../../services/login.service';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
