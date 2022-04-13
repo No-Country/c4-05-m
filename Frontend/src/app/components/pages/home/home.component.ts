@@ -5,6 +5,7 @@ import { HttpConfigService } from '../../../services/http-config.service';
 import { delay, of, tap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { CrearPublicacionComponent } from '../components/crear-publicacion/crear-publicacion.component';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -13,10 +14,12 @@ import { CrearPublicacionComponent } from '../components/crear-publicacion/crear
 })
 export class HomeComponent implements OnInit {
   suggestions = [];
+  currentUser!: any;
 
   constructor(
     private _title: Title,
     private httpService: HttpConfigService,
+    private loginService: LoginService,
     private dialog: MatDialog
   ) {
     this._title.setTitle('Fashion Hunter - Home');
@@ -35,6 +38,16 @@ export class HomeComponent implements OnInit {
       error: (error) => {},
       complete: () => {},
     });
+
+    const userId = this.loginService.getUserId();
+    this.httpService.get<any>(`${environment.apiUrl}/user/${userId}`, true)
+      .subscribe({
+        next: (resp: any) => {
+          this.currentUser = resp.data.user;
+        },
+        error: error => { },
+        complete: () => { }
+      });
   }
 
   ngOnInit(): void {}
@@ -45,7 +58,14 @@ export class HomeComponent implements OnInit {
       .subscribe({
         next: (resp: any) => {
           const allUsers = resp.data.users;
-          this.suggestions = allUsers.slice(allUsers.length - 5);
+          const resultSuggestion = allUsers.filter((user: any) => {
+            return user.username !== this.currentUser.username;
+          });
+          if (resultSuggestion.length > 5) {
+            this.suggestions = resultSuggestion.slice(resultSuggestion.length -5);
+          } else {
+            this.suggestions = resultSuggestion;
+          }
         },
         error: (error) => {},
         complete: () => {},
