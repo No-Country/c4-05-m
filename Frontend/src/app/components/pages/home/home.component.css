@@ -75,11 +75,10 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
-  padding: 24px 26px;
+  justify-content: space-between;
 
   position: fixed;
-  width: 15rem;
+  width: fit-content;
   height: 5.4rem;
   left: 49rem;
   top: 6.5rem;
@@ -90,6 +89,13 @@
 }
 .shortcuts img {
   cursor: pointer;
+  margin: auto 20px;
+}
+.shortcuts img:first-child {
+  margin-left: 25px;
+}
+.shortcuts img:last-child {
+  margin-right: 25px;
 }
 .add-new-icon {
   margin-right: 2.5rem;
