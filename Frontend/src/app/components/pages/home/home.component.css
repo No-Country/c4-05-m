@@ -142,3 +142,28 @@
   height: 40px;
   border-radius: 100%;
 }
+.crear-publicacion {
+  position: absolute;
+  top: 125px;
+  right: 12px;
+  display: none;
+}
+.crear-oculto {
+  display: none;
+}
+.crear-visible {
+  display: flex;
+  flex-direction: column;
+}
+.crear-publicacion button {
+  font-size: 1rem;
+  background: var(--primary-color);
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 15px;
+  height: 25px;
+  line-height: 0px;
+  cursor: pointer;
+}

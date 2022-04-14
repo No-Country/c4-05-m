@@ -15,6 +15,7 @@ import { LoginService } from '../../../services/login.service';
 export class HomeComponent implements OnInit {
   suggestions = [];
   currentUser!: any;
+  oculto = true;
 
   constructor(
     private _title: Title,

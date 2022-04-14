@@ -76,7 +76,7 @@
     src="assets/images/icons/Add_New.png"
     alt=""
     class="add-new-icon"
-    (click)="crearPublicacion()"
+    (click)="oculto = !oculto"
   />
   <img src="assets/images/icons/chat.png" alt="" [routerLink]="['/mensajes']" />
   <img src="assets/images/icons/heart.png" alt="" [routerLink]="['/home']" />
@@ -92,4 +92,12 @@
     >
     <span class="follow">Seguir</span>
   </div>
+</div>
+
+<div
+  class="crear-publicacion animate__animated animate__faster"
+  [ngClass]="{'animate__fadeInRight crear-visible': !oculto}"
+>
+  <button (click)="crearPublicacion()">Crear publicación</button>
+  <button>Editar perfil</button>
 </div>
