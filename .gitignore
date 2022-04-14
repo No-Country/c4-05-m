@@ -40,6 +40,7 @@
 /Frontend/libpeerconnection.log
 /Frontend/testem.log
 /Frontend/typings
+*.local.ts
 
 # System files
 /Frontend/.DS_Store
