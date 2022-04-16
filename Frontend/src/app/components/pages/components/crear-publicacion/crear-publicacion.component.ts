@@ -9,7 +9,6 @@ import { CrearPublicacion1Component } from '../crear-publicacion1/crear-publicac
   styleUrls: ['./crear-publicacion.component.css'],
 })
 export class CrearPublicacionComponent implements OnInit {
-  previsualizacion!: string;
   foto: any;
 
   constructor(
