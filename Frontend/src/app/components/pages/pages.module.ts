@@ -11,6 +11,7 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { FormsModule } from '@angular/forms';
 import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 import { CrearPublicacion1Component } from './components/crear-publicacion1/crear-publicacion1.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CrearPublicacion1Component } from './components/crear-publicacion1/crea
     PagesRoutingModule,
     PickerModule,
     FormsModule,
+    NgxDropzoneModule
   ],
   exports: []
 })

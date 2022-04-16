@@ -9,7 +9,7 @@
   height: 34rem;
   border-radius: 20px;
 }
-.drop_zone {
+ngx-dropzone {
   display: flex;
   flex-direction: column;
   align-items: center;

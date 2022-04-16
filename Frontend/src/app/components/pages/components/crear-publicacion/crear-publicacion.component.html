@@ -1,11 +1,26 @@
 <div class="container">
   <h2>Crear publicación</h2>
   <div class="linea-horizontal"></div>
-  <div class="drop_zone">
-    <img src="assets/images/icons/Vector.png" alt="">
-    <p>Arrastra aquí una foto</p>
-  </div>
-    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+  <ngx-dropzone (change)="onSelect($event)" accept="image/jpeg,image/jpg,image/png,image/gif">
+    <ngx-dropzone-label>Arrastra aquí una foto</ngx-dropzone-label>
+    <ngx-dropzone-preview
+      [removable]="false"
+      multiple="false"
+      (removed)="onRemove(foto[0])"
+      *ngIf="foto.length"
+    >
+      <img src="assets/images/icons/Vector.png" alt="" />
+      <ngx-dropzone-label
+        >{{ foto[0].name }} ({{ foto[0].type }})</ngx-dropzone-label
+      >
+    </ngx-dropzone-preview>
+  </ngx-dropzone>
+  <input
+    type="file"
+    class="file-input"
+    (change)="onFileSelected($event)"
+    #fileUpload
+  />
   <button (click)="fileUpload.click()">Selecciona del ordenador</button>
   <div class="linea-horizontal"></div>
 </div>
