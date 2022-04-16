@@ -42,6 +42,7 @@
 .flex-item-1 .img-post {
   width: 400px;
   height: 400px;
+  border-radius: 20px;
 }
 
 .location {
@@ -62,7 +63,7 @@
   width: 0px;
   height: 400px;
   border-left: 1px solid var(--primary-color);
-  margin: auto 55px;
+  margin: auto 30px;
 }
 
 .flex-item-2 {
