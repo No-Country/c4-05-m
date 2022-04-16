@@ -10,7 +10,7 @@ import { MensajesComponent } from './components/mensajes/mensajes.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'home', component: HomeComponent, data: { animation: 'homePage' } },
-  { path: 'profile', component: ProfileComponent, pathMatch: 'full'},
+  { path: 'profile/:id', component: ProfileComponent, pathMatch: 'full'},
   {
     path: 'guardadas',
     component: GuardadasComponent,

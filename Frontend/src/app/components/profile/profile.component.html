@@ -1,8 +1,8 @@
 <app-header></app-header>
 <section class="cabecero">
-    <img src="../../../assets/images/avatar/Marina.png" alt="foto-usuario">
+    <img [src]="user.img" alt="foto-usuario">
     <div class="info-user">
-    <h4>Marina Jolls</h4>
+    <h4>{{ user.firstName }} {{ user.lastName }}</h4>
     <p> Periodista de moda </p>
     <p>La moda no sólo existe en los vestidos.</p>
     <hr>
@@ -19,11 +19,26 @@
 </section>
 <section class="publicaciones">
     <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo1.jpg">
+            <p>Producción de fotos</p>
+        </div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo5.jpg">
+            <p>Noche de casamiento Lucia y Marcos</p>
+        </div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo2.jpg">
+            <p>Gold</p>
+        </div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo3.jpg">
+        </div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo4.jpg">
+        </div>
+        <div class="grid-item">
+            <img src="../../../assets/images/profile/posteo6.jpg">
+        </div>
     </div>
 </section>

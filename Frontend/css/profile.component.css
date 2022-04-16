@@ -5,13 +5,15 @@
     left: 7rem;
 }
 
-img{
-    width: 173px;
+.cabecero img{
+    width: 10%;
+    border: solid 2px #5b074f;
+    border-radius: 100%;
 }
 
 .info-user{
     position: relative;
-    margin-left: 5em;
+    margin-left: 3em;
     width: 40%;
 }
 
@@ -45,6 +47,10 @@ hr{
     text-decoration: none;
 }
 
+.btn:hover{
+    background-color: rgb(218, 80, 56);
+}
+
 strong{
     margin-right: 5em;
 }
@@ -52,20 +58,42 @@ strong{
     color: #ffff;
     margin-right: 7px;
 }
+
+.publicaciones{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10em;
+}
+
 .grid-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
-    grid-auto-rows: minmax(250px, auto);
-    gap: 50px;
-    padding: 50px;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .grid-item{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 3em;
     transition: transform 0.3s ease-in-out;
-    border-radius: 40px;
 }
+
+.grid-item p{
+    margin-top: 5px;
+    display: inline;
+}
+
+.grid-item img{
+    width: 16em;
+    height: 18em;
+    border-radius: 15px;
+}
+
+
 .grid-item:hover{
     filter: opacity(0.9);
     transform: scale(1.04);
