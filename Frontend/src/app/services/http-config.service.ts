@@ -17,7 +17,7 @@ export class HttpConfigService {
 
     // Aquí se setean los headers
     this._headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+      /* 'Content-Type': 'application/json', */
       'Authorization':
         'Bearer ' + theToken,
     });

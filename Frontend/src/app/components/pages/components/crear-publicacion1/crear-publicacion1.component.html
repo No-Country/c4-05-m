@@ -28,12 +28,12 @@
           <img [src]="currentUser.img" alt="" />
           <span>@{{currentUser.username}}</span>
         </div>
-        <textarea placeholder="Escribe el pie de foto..." #comentario maxlength="400"></textarea>
+        <textarea placeholder="Escribe el pie de foto..." #comentario maxlength="400" [(ngModel)]="description"></textarea>
         <span class="character-limit">{{comentario.value.length? comentario.value.length + 1 : 0 || 0}}/400</span>
       </div>
       <div class="actions">
         <button class="omitir" (click)="omitir()">Omitir</button>
-        <button class="publicar">Publicar</button>
+        <button class="publicar" (click)="publicar()">Publicar</button>
       </div>
     </div>
   </div>

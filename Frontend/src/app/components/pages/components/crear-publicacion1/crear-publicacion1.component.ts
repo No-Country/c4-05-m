@@ -3,6 +3,9 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dial
 import { DomSanitizer } from '@angular/platform-browser';
 import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
 import { environment } from '../../../../../environments/environment';
+import { HttpConfigService } from '../../../../services/http-config.service';
+
+const formData = new FormData();
 
 @Component({
   selector: 'app-crear-publicacion1',
@@ -14,12 +17,14 @@ export class CrearPublicacion1Component implements OnInit {
   currentUser!: any;
   previsualizacion!: string;
   location!: string;
+  description!: string;
 
   constructor(
     private sanitizer: DomSanitizer,
     public dialogRef: MatDialogRef<CrearPublicacion1Component>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private httpService: HttpConfigService
   ) {
     this.extraerBase64(data.foto).then((imagen: any) => {
       console.log(imagen);
@@ -101,5 +106,31 @@ export class CrearPublicacion1Component implements OnInit {
 
   omitir() {
     this.dialogRef.close();
+  }
+
+  publicar() {
+    console.log(this.data.foto);
+    console.log(this.description);
+
+
+    formData.append("description", this.description);
+    formData.append("postImg", this.data.foto);
+
+    this.httpService
+      .post(`${environment.apiUrl}/posts`, formData, true)
+      .subscribe({
+        next: (resp) => {
+          console.log(resp);
+
+        },
+        error: (error) => {
+          console.log(error);
+
+        },
+        complete: () => {
+          console.log('complete');
+
+        }
+      });
   }
 }
