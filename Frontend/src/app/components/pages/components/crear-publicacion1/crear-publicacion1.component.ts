@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
 import { environment } from '../../../../../environments/environment';
 import { HttpConfigService } from '../../../../services/http-config.service';
+import { DescartarPublicacionComponent } from '../descartar-publicacion/descartar-publicacion.component';
 
 const formData = new FormData();
 
@@ -105,7 +106,15 @@ export class CrearPublicacion1Component implements OnInit {
   }
 
   omitir() {
-    this.dialogRef.close();
+    const dialogRef = this.dialog.open(DescartarPublicacionComponent, {
+      disableClose: false,
+      data: {user: this.currentUser}
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
   }
 
   publicar() {

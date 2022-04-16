@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { CrearPublicacionComponent } from './components/crear-publicacion/crear-publicacion.component';
 import { CrearPublicacion1Component } from './components/crear-publicacion1/crear-publicacion1.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { DescartarPublicacionComponent } from './components/descartar-publicacion/descartar-publicacion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     HeaderComponent,
     MensajesComponent,
     CrearPublicacionComponent,
-    CrearPublicacion1Component
+    CrearPublicacion1Component,
+    DescartarPublicacionComponent
   ],
   imports: [
     CommonModule,
