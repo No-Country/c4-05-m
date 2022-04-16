@@ -17,12 +17,6 @@ export class CrearPublicacionComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  dropHandler(event: any) {
-    event.preventDefault();
-
-
-  }
-
   onFileSelected(event: any): boolean {
     if (event.target.files[0]) {
       const archivoCapturado = event.target.files[0];
