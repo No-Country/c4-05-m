@@ -1,0 +1,72 @@
+.cabecero{
+    display: flex;
+    position: relative;
+    top: 8rem;
+    left: 7rem;
+}
+
+img{
+    width: 173px;
+}
+
+.info-user{
+    position: relative;
+    margin-left: 5em;
+    width: 40%;
+}
+
+h4{
+    display: inline-block;
+    font-size: 30px;
+}
+
+p{
+    font-size: 18px;
+}
+
+hr{
+    border: 1px solid #5b074f
+}
+.options{
+    margin-left: 5em;
+}
+
+.btn{
+    display: block;
+    color: #ffff;
+    width: 100%;
+    background-color: rgb(217, 121, 104);
+    text-align: center;
+    margin: 30px;
+    margin-left: 0;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+strong{
+    margin-right: 5em;
+}
+.fas{
+    color: #ffff;
+    margin-right: 7px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+    grid-auto-rows: minmax(250px, auto);
+    gap: 50px;
+    padding: 50px;
+}
+.grid-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 40px;
+}
+.grid-item:hover{
+    filter: opacity(0.9);
+    transform: scale(1.04);
+}

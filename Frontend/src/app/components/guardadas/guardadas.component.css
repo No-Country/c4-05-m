@@ -1,0 +1,40 @@
+/* Main content */
+.container {
+  position: relative;
+  top: 5rem;
+}
+
+/* Back */
+.back {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.back img {
+  cursor: pointer;
+}
+.back span {
+  font-size: 1.5rem;
+}
+
+/* Saved */
+.saved-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  width: 80%;
+  margin: 1rem auto;
+}
+.saved-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 0rem 2rem;
+  border-radius: 10px;
+}
+.saved-item small {
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+}

@@ -6,6 +6,9 @@
 /Frontend/out-tsc
 /Frontend/bazel-out
 
+# Style
+/Frontend/sass
+
 # Node
 /Frontend/node_modules
 /Frontend/npm-debug.log
@@ -40,6 +43,7 @@
 /Frontend/libpeerconnection.log
 /Frontend/testem.log
 /Frontend/typings
+*.local.ts
 
 # System files
 /Frontend/.DS_Store
@@ -71,6 +75,10 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+pnpm-lock.yaml
+package-lock.json
+.config.env
+yarn.lock
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json

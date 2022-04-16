@@ -1,0 +1,134 @@
+/* POSTS */
+.posts-container {
+  position: relative;
+  top: 5rem;
+  left: 12rem;
+  display: flex;
+  justify-content: center;
+  width: 33.24rem;
+  border: 2px solid #afa9a9;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.posts {
+  margin-top: 1.91rem;
+  margin-bottom: 1.91rem;
+  width: 29.42rem;
+  height: fit-content;
+}
+.post {
+  display: flex;
+  position: relative;
+}
+.user {
+  display: inline;
+  margin-top: 0px;
+  margin-left: 0.5rem;
+  flex-basis: content;
+}
+.username::before {
+  content: "@";
+}
+.elapsed {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-right: 10px;
+  flex-basis: 7rem;
+  text-align: right;
+}
+.elapsed p {
+  margin-top: 0px;
+}
+.img-rounded {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+}
+.post-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: 30rem;
+  border-radius: 20px;
+}
+.actions {
+  display: flex;
+  align-items: center;
+}
+.arrow-up {
+  margin-left: 2.5px;
+}
+.arrow-down,
+.chat-icon {
+  margin-left: 50px;
+}
+.favorites {
+  margin-left: 185px;
+  display: flex;
+  align-items: center;
+}
+.favorite-counter {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+/* Shortcuts */
+.shortcuts {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 26px;
+
+  position: fixed;
+  width: 15rem;
+  height: 5.4rem;
+  left: 52rem;
+  top: 6.5rem;
+
+  border: 2px solid #afa9a9;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.shortcuts img {
+  cursor: pointer;
+}
+.add-new-icon {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+/* suggestions */
+.suggestions {
+  position: fixed;
+  width: 19rem;
+  height: fit-content;
+  left: 50rem;
+  top: 14.5rem;
+  font-weight: bold;
+  border: 2px solid #afa9a9;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.suggestions-title {
+  margin-left: 0.6rem;
+}
+.suggestion {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  padding: 10px 12px;
+  align-items: center;
+}
+.follow {
+  color: #7f1f71;
+  cursor: pointer;
+}
+.suggestion img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}

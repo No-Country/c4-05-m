@@ -1,0 +1,19 @@
+body {
+  background: var(#e5e5e5);
+}
+.container {
+  color: var(#7f1f71);
+  text-align: center;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+}
+.actions button {
+  margin: 30px;
+  color: white;
+  background: var(#ec46a1);
+  border-radius: 10px;
+  width: 10rem;
+  height: 2rem;
+}
