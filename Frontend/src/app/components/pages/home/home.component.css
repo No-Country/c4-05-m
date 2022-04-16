@@ -143,7 +143,7 @@
   border-radius: 100%;
 }
 .crear-publicacion {
-  position: absolute;
+  position: fixed;
   top: 125px;
   right: 12px;
   display: none;
