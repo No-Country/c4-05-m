@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatDialog } from '@angular/material/dialog';
+import { CrearPublicacion1Component } from '../crear-publicacion1/crear-publicacion1.component';
 
 @Component({
   selector: 'app-crear-publicacion',
@@ -12,7 +14,8 @@ export class CrearPublicacionComponent implements OnInit {
   foto: any;
 
   constructor(
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +29,16 @@ export class CrearPublicacionComponent implements OnInit {
         this.previsualizacion = imagen.base;
       });
       this.foto = archivoCapturado;
-      // Seguir...
+
+      const dialogRef = this.dialog.open(CrearPublicacion1Component, {
+        disableClose: false,
+      });
+
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log('The dialog was closed');
+        console.log(result);
+      });
+
       return true;
     } else {
       return false;
