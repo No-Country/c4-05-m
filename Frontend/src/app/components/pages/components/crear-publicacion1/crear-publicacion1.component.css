@@ -151,6 +151,7 @@ textarea::placeholder {
   color: var(--primary-color);
   font-size: medium;
   padding: 10px 30px;
+  cursor: pointer;
 }
 
 .publicar {
@@ -160,4 +161,5 @@ textarea::placeholder {
   font-size: medium;
   padding: 10px 30px;
   border-radius: 10px;
+  cursor: pointer;
 }

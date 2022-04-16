@@ -98,4 +98,8 @@ export class CrearPublicacion1Component implements OnInit {
       }
     );
   }
+
+  omitir() {
+    this.dialogRef.close();
+  }
 }
