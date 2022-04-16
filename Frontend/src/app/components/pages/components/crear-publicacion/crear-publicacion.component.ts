@@ -25,7 +25,7 @@ export class CrearPublicacionComponent implements OnInit {
     this.foto.push(...event.addedFiles);
     console.log(this.foto);
 
-    this.openDialog();
+    this.openDialog1();
   }
 
   onRemove(event: any) {
@@ -46,7 +46,7 @@ export class CrearPublicacionComponent implements OnInit {
 
       console.log(this.foto);
 
-      this.openDialog();
+      this.openDialog1();
 
       return true;
     } else {
@@ -54,7 +54,7 @@ export class CrearPublicacionComponent implements OnInit {
     }
   }
 
-  openDialog() {
+  openDialog1() {
     const dialogRef = this.dialog.open(CrearPublicacion1Component, {
       disableClose: false,
       data: { foto: this.foto[0] },
