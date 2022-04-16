@@ -42,7 +42,7 @@ export class CrearPublicacionComponent implements OnInit {
 
     if (event.target.files[0]) {
       const archivoCapturado = event.target.files[0];
-      this.foto = archivoCapturado;
+      this.foto.push(archivoCapturado);
 
       console.log(this.foto);
 
