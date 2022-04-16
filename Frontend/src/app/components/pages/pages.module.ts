@@ -13,6 +13,8 @@ import { CrearPublicacionComponent } from './components/crear-publicacion/crear-
 import { CrearPublicacion1Component } from './components/crear-publicacion1/crear-publicacion1.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DescartarPublicacionComponent } from './components/descartar-publicacion/descartar-publicacion.component';
+import { CreandoPublicacionComponent } from './components/creando-publicacion/creando-publicacion.component';
+import { MaterialModule } from '../../modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -23,14 +25,16 @@ import { DescartarPublicacionComponent } from './components/descartar-publicacio
     MensajesComponent,
     CrearPublicacionComponent,
     CrearPublicacion1Component,
-    DescartarPublicacionComponent
+    DescartarPublicacionComponent,
+    CreandoPublicacionComponent
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     PickerModule,
     FormsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    MaterialModule
   ],
   exports: []
 })

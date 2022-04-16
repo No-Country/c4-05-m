@@ -1,20 +1,21 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import {
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MatDialog,
+} from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
 import { environment } from '../../../../../environments/environment';
 import { HttpConfigService } from '../../../../services/http-config.service';
 import { DescartarPublicacionComponent } from '../descartar-publicacion/descartar-publicacion.component';
-
-const formData = new FormData();
-
+import { CreandoPublicacionComponent } from '../creando-publicacion/creando-publicacion.component';
 @Component({
   selector: 'app-crear-publicacion1',
   templateUrl: './crear-publicacion1.component.html',
   styleUrls: ['./crear-publicacion1.component.css'],
 })
 export class CrearPublicacion1Component implements OnInit {
-
   currentUser!: any;
   previsualizacion!: string;
   location!: string;
@@ -65,7 +66,7 @@ export class CrearPublicacion1Component implements OnInit {
   goToCrearPublicacion() {
     const dialogRef = this.dialog.open(CrearPublicacionComponent, {
       disableClose: false,
-      data: {user: this.currentUser}
+      data: { user: this.currentUser },
     });
 
     this.dialogRef.close();
@@ -81,7 +82,7 @@ export class CrearPublicacion1Component implements OnInit {
       (success) => {
         const longitude = success.coords.longitude;
         const latitude = success.coords.latitude;
-        const endpoint = "mapbox.places";
+        const endpoint = 'mapbox.places';
         const access_token = environment.mapBoxToken;
         const apiUrl = `https://api.mapbox.com/geocoding/v5/${endpoint}/${longitude},${latitude}.json?types=place&access_token=${access_token}`;
 
@@ -108,7 +109,7 @@ export class CrearPublicacion1Component implements OnInit {
   omitir() {
     const dialogRef = this.dialog.open(DescartarPublicacionComponent, {
       disableClose: false,
-      data: {user: this.currentUser}
+      data: { user: this.currentUser },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -121,25 +122,20 @@ export class CrearPublicacion1Component implements OnInit {
     console.log(this.data.foto);
     console.log(this.description);
 
+    const dialogRef = this.dialog.open(CreandoPublicacionComponent, {
+      disableClose: false,
+      data: {
+        user: this.currentUser,
+        foto: this.data.foto,
+        description: this.description,
+      },
+    });
 
-    formData.append("description", this.description);
-    formData.append("postImg", this.data.foto);
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
 
-    this.httpService
-      .post(`${environment.apiUrl}/posts`, formData, true)
-      .subscribe({
-        next: (resp) => {
-          console.log(resp);
 
-        },
-        error: (error) => {
-          console.log(error);
-
-        },
-        complete: () => {
-          console.log('complete');
-
-        }
-      });
   }
 }

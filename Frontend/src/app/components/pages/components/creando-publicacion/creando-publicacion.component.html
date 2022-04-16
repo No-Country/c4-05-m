@@ -1,0 +1,18 @@
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <span>Creando publicación</span>
+  </div>
+
+  <!-- Horizontal divider -->
+  <div class="horizontal-div"></div>
+
+  <div class="flex-container">
+    <p>
+      {{ message }}
+    </p>
+    <!-- Aquí va la progress bar -->
+    <mat-progress-bar mode="indeterminate" *ngIf="subiendo"></mat-progress-bar>
+    <button class="home" (click)="goHome()">Home</button>
+  </div>
+</div>
