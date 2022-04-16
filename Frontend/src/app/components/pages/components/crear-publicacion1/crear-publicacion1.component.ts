@@ -1,22 +1,22 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
 
 @Component({
   selector: 'app-crear-publicacion1',
   templateUrl: './crear-publicacion1.component.html',
-  styleUrls: ['./crear-publicacion1.component.css']
+  styleUrls: ['./crear-publicacion1.component.css'],
 })
 export class CrearPublicacion1Component implements OnInit {
-
   previsualizacion!: string;
 
   constructor(
     private sanitizer: DomSanitizer,
     public dialogRef: MatDialogRef<CrearPublicacion1Component>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialog: MatDialog
   ) {
-
     this.extraerBase64(data.foto).then((imagen: any) => {
       console.log(imagen);
 
@@ -24,8 +24,7 @@ export class CrearPublicacion1Component implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   extraerBase64 = async ($event: any) =>
     new Promise((resolve, reject) => {
@@ -50,4 +49,16 @@ export class CrearPublicacion1Component implements OnInit {
       }
     });
 
+  goToCrearPublicacion() {
+    const dialogRef = this.dialog.open(CrearPublicacionComponent, {
+      disableClose: false,
+    });
+
+    this.dialogRef.close();
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
+  }
 }
