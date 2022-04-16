@@ -36,7 +36,9 @@
               "node_modules/@ctrl/ngx-emoji-mart/picker.css",
               "node_modules/animate.css/animate.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/mapbox-gl/dist/mapbox-gl.js"
+            ]
           },
           "configurations": {
             "production": {

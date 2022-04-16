@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacion.component';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-crear-publicacion1',
@@ -12,6 +13,7 @@ export class CrearPublicacion1Component implements OnInit {
 
   currentUser!: any;
   previsualizacion!: string;
+  location!: string;
 
   constructor(
     private sanitizer: DomSanitizer,
@@ -66,5 +68,34 @@ export class CrearPublicacion1Component implements OnInit {
       console.log('The dialog was closed');
       console.log(result);
     });
+  }
+
+  locate() {
+    navigator.geolocation.getCurrentPosition(
+      (success) => {
+        const longitude = success.coords.longitude;
+        const latitude = success.coords.latitude;
+        const endpoint = "mapbox.places";
+        const access_token = environment.mapBoxToken;
+        const apiUrl = `https://api.mapbox.com/geocoding/v5/${endpoint}/${longitude},${latitude}.json?types=place&access_token=${access_token}`;
+
+        fetch(apiUrl)
+          .then((resp) => {
+            // console.log(resp);
+            return resp.json();
+          })
+          .then((result) => {
+            // console.log(result);
+            // console.log(result.features[0].place_name);
+            this.location = result.features[0].place_name;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

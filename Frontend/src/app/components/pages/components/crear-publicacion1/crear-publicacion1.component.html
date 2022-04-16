@@ -13,9 +13,9 @@
     <div class="flex-item-1">
       <!-- <img src="assets/images/crear-publicacion.png" alt="" class="img-post" /> -->
       <img [src]="previsualizacion" alt="" class="img-post" />
-      <div class="location">
+      <div class="location" (click)="locate()">
         <img src="assets/images/icons/location.png" alt="" />
-        <span>Añadir ubicación</span>
+        <span>{{ location? location : 'Añadir ubicación'}}</span>
       </div>
     </div>
 
