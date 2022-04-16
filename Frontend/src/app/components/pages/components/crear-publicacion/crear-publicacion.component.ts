@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CrearPublicacion1Component } from '../crear-publicacion1/crear-publicacion1.component';
 
 @Component({
@@ -12,7 +12,8 @@ export class CrearPublicacionComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    public dialogRef: MatDialogRef<CrearPublicacionComponent>
+    public dialogRef: MatDialogRef<CrearPublicacionComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}
 
   ngOnInit(): void {}
@@ -57,7 +58,7 @@ export class CrearPublicacionComponent implements OnInit {
   openDialog1() {
     const dialogRef = this.dialog.open(CrearPublicacion1Component, {
       disableClose: false,
-      data: { foto: this.foto[0] },
+      data: { foto: this.foto[0], user: this.data },
     });
 
     this.dialogRef.close();

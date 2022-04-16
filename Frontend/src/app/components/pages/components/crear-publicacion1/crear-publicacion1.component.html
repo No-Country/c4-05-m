@@ -25,8 +25,8 @@
     <div class="flex-item-2">
       <div class="wrapper">
         <div class="user-information">
-          <img src="assets/images/avatar/Marina.png" alt="" />
-          <span>@Marina.jol</span>
+          <img [src]="currentUser.img" alt="" />
+          <span>@{{currentUser.username}}</span>
         </div>
         <textarea placeholder="Escribe el pie de foto..."></textarea>
         <span class="character-limit">0/400</span>

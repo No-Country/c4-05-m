@@ -9,6 +9,8 @@ import { CrearPublicacionComponent } from '../crear-publicacion/crear-publicacio
   styleUrls: ['./crear-publicacion1.component.css'],
 })
 export class CrearPublicacion1Component implements OnInit {
+
+  currentUser!: any;
   previsualizacion!: string;
 
   constructor(
@@ -22,6 +24,9 @@ export class CrearPublicacion1Component implements OnInit {
 
       this.previsualizacion = imagen.base;
     });
+
+    console.log(data.user.user);
+    this.currentUser = data.user.user;
   }
 
   ngOnInit(): void {}
@@ -52,6 +57,7 @@ export class CrearPublicacion1Component implements OnInit {
   goToCrearPublicacion() {
     const dialogRef = this.dialog.open(CrearPublicacionComponent, {
       disableClose: false,
+      data: {user: this.currentUser}
     });
 
     this.dialogRef.close();
