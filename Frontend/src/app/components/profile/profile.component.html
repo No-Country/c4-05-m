@@ -1,6 +1,7 @@
 <app-header></app-header>
+
 <section class="cabecero">
-    <img [src]="user.img" alt="foto-usuario">
+        <img [src]="user.img" alt="foto-usuario">
     <div class="info-user">
     <h4>{{ user.firstName }} {{ user.lastName }}</h4>
     <p> Periodista de moda </p>
@@ -11,9 +12,7 @@
     <strong>300 seguidos</strong>
     </div>
     <div class="options">
-        <a class="btn" href="#"><i class="fas fa-pen"></i>
-            Editar perfil</a>
-        <a class="btn" href="#"><i class="fas fa-cog"></i>
+        <a class="btn" [routerLink]="['/editar-perfil']"><i class="fas fa-cog"></i>
             Configuración</a>
     </div>
 </section>

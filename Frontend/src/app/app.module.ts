@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     GuardadasComponent,
     HomeComponent,
-    MensajesComponent
+    MensajesComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,

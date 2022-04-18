@@ -1,0 +1,98 @@
+.editar-opciones {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-lateral {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 5em;
+    margin-left: 3em;
+}
+
+.nav-lateral a {
+    text-decoration: none;
+    padding: 2.2em;
+    color: black;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+h3 {
+    display: inline-block;
+    position: relative;
+}
+
+h3::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background-color: #EC46A1;
+    top: -0.1em;
+}
+
+h3::before {
+    left: 25px;
+}
+img{
+    width: 10%;
+}
+
+.cambiar-datos {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7em;
+    border-left: solid 2px #7F1F71;
+    padding-left: 3em;
+}
+.input-info p{
+    display: inline;
+    margin-left: 3em;
+}
+
+label {
+    font-weight: 700;
+    margin-right: 5em;
+}
+
+input {
+    display: inline-block;
+    width: 35%;
+    height: 2em;
+    margin: 0.5em;
+    border: solid #7F1F71 1px;
+    border-radius: 10px;
+}
+#biografia{
+    height: 4em;
+}
+
+#eliminar {
+    color: #7F1F71;
+    font-weight: 700;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+button {
+    width: 30%;
+    padding: 8px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 10px;
+    color: #ffff;
+    background-color: #EC46A1;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+.opciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

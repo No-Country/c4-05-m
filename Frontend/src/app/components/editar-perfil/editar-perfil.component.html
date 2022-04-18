@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<section class="editar-opciones">
+<nav class="nav-lateral">
+    <a routerLink="['/editar-perfil']"><strong>Editar perfil</strong><h3></h3></a>
+    <a href="#">Cambiar Contraseña</a>
+    <a href="#">Notificaciones push</a>
+    <a href="#">Privacidad y seguridad</a>
+</nav>
+<div class="cambiar-datos">
+    <div class="input-info">
+        <img [src]="user.img">
+        <label>Cambiar foto de perfil</label>
+    </div>
+    <div class="input-info">
+        <label>Nombre</label>
+        <input>
+        <p>El nombre con el que te conoce 
+            la mayor cantidad de personas, 
+        asi podrán encontrarte en la red.</p>
+    </div>
+    <div class="input-info">
+        <label>Usuario</label>
+        <input>
+    </div>
+    <div class="input-info">
+        <label>Ocupación</label>
+        <input>
+    </div>
+    <div class="input-info">
+        <label>Correo electrónico</label>
+        <input>
+    </div>
+    <div class="input-info">
+        <label>Biografía</label>
+        <input id="biografia">
+    </div>
+    <div class="opciones">
+        <a id="eliminar" href="#">Eliminar cuenta</a>
+        <button>Guardar</button>
+    </div>
+</div>
+</section>

@@ -4,11 +4,12 @@
     top: 8rem;
     left: 7rem;
 }
-
 .cabecero img{
-    width: 10%;
     border: solid 2px #5b074f;
     border-radius: 100%;
+    width: 164px;
+    height: 164px;
+    margin-top: -20px;
 }
 
 .info-user{
