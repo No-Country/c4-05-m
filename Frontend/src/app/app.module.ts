@@ -1,3 +1,4 @@
+// MÓDULOS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,19 +7,22 @@ import { CommonModule } from '@angular/common';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { AppRoutingModule } from './app-routing.module';
 import { SessionModule } from './components/session/session.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// COMPONENTES
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GuardadasComponent } from './components/guardadas/guardadas.component' ;
-
-import { LoginService } from './services/login.service';
-import { CookieService } from 'ngx-cookie-service';
-import { ForgetPasswordService } from './services/forget-password.service';
 import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { MensajesComponent } from './components/mensajes/mensajes.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+
+// SERVICIOS
+import { LoginService } from './services/login.service';
+import { CookieService } from 'ngx-cookie-service';
+import { ForgetPasswordService } from './services/forget-password.service';
+import { EditarService } from './services/editar.service';
 
 
 @NgModule({
@@ -45,7 +49,8 @@ import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.
   providers: [
     LoginService,
     CookieService,
-    ForgetPasswordService
+    ForgetPasswordService,
+    EditarService
   ],
   bootstrap: [AppComponent]
 })

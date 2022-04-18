@@ -10,29 +10,31 @@
 <div class="cambiar-datos">
     <div class="input-info">
         <img [src]="user.img">
-        <label>Cambiar foto de perfil</label>
+        <label id="cambiar-foto">Cambiar foto de perfil</label>
     </div>
+    
     <div class="input-info">
-        <label>Nombre</label>
-        <input>
-        <p>El nombre con el que te conoce 
-            la mayor cantidad de personas, 
-        asi podrán encontrarte en la red.</p>
+        <label class="label-name">Nombre</label>
+        <input class="name" placeholder="{{ user.firstName}} {{ user.lastName }}">
+            <p>El nombre con el que te conoce 
+                la mayor cantidad de personas, 
+            asi podrán encontrarte en la red.</p>
     </div>
     <div class="input-info">
         <label>Usuario</label>
+        <input placeholder="@{{ user.username }}">
+    </div>
+    <div class="input-info">
+        <label class="otro-margin">Ocupación</label>
         <input>
     </div>
     <div class="input-info">
-        <label>Ocupación</label>
-        <input>
+        <label class="otro-margin">Correo
+            <br>electrónico</label>
+        <input placeholder="{{ user.email }}">
     </div>
     <div class="input-info">
-        <label>Correo electrónico</label>
-        <input>
-    </div>
-    <div class="input-info">
-        <label>Biografía</label>
+        <label class="biografia">Biografía</label>
         <input id="biografia">
     </div>
     <div class="opciones">

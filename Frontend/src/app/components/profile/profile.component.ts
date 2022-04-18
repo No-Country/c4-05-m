@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { HttpConfigService } from '../../services/http-config.service';
 import { LoginService } from '../../services/login.service';
@@ -12,11 +11,15 @@ import { LoginService } from '../../services/login.service';
 export class ProfileComponent implements OnInit {
 
   user: any;
+  ocupacion: string;
+  biografia: string;
 
   constructor(
-    private router: Router,
     private httpService: HttpConfigService,
     private loginService: LoginService) { 
+
+      this.ocupacion = "";
+      this.biografia = "";
 
     }
 
