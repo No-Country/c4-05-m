@@ -13,7 +13,7 @@ const formData = new FormData();
 export class CreandoPublicacionComponent implements OnInit {
 
   message: string = 'Subiendo...';
-  subiendo: boolean = true;
+  progress: number = 0;
 
   constructor(
     public dialogRef: MatDialogRef<CreandoPublicacionComponent>,
@@ -30,6 +30,7 @@ export class CreandoPublicacionComponent implements OnInit {
       .subscribe({
         next: (resp) => {
           console.log(resp);
+          this.progress = 100;
         },
         error: (error) => {
           console.log(error);
@@ -37,7 +38,6 @@ export class CreandoPublicacionComponent implements OnInit {
         complete: () => {
           console.log('complete');
           this.message = 'Listo!';
-          this.subiendo = false;
         },
       });
   }

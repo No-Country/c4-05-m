@@ -12,7 +12,7 @@
       {{ message }}
     </p>
     <!-- Aquí va la progress bar -->
-    <mat-progress-bar mode="indeterminate" *ngIf="subiendo"></mat-progress-bar>
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
     <button class="home" (click)="goHome()">Home</button>
   </div>
 </div>
