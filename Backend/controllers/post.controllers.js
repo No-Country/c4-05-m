@@ -97,15 +97,12 @@ exports.getPostById = catchAsync(async (req, res, next) => {
     return next(new AppError(404, "I cant find the post with the given ID"));
   }
 
-<<<<<<< HEAD
-=======
   const imgRef = ref(storage, post.image);
 
   const imgDownloadUrl = await getDownloadURL(imgRef);
 
   post.image = imgDownloadUrl;
 
->>>>>>> 0485d76d5ec94a48acd9d757dbc3a699d7e397d8
   res.status(200).json({
     status: "success",
     data: {
@@ -114,20 +111,11 @@ exports.getPostById = catchAsync(async (req, res, next) => {
   });
 });
 
-<<<<<<< HEAD
-// GET POST BY USER
-exports.getPostByUser = catchAsync(async (req, res, next) => {
-  const { username } = req.params;
-
-  // It's pending to import the model
-  const post = await Post.find({ username });
-=======
 // Get post by user
 exports.getPostByUser = catchAsync(async (req, res, next) => {
   const { username } = req.params;
 
   const post = await Post.find({ username, active: true });
->>>>>>> 0485d76d5ec94a48acd9d757dbc3a699d7e397d8
 
   if (!post) {
     return next(new AppError(404, "I cant find the post with the given username"));
@@ -139,9 +127,6 @@ exports.getPostByUser = catchAsync(async (req, res, next) => {
       post
     }
   });
-<<<<<<< HEAD
-});
-=======
 });
 
 // Update the post
@@ -202,4 +187,3 @@ exports.deletePost = catchAsync(async (req, res, next) => {
     status: "success"
   });
 });
->>>>>>> 0485d76d5ec94a48acd9d757dbc3a699d7e397d8
