@@ -24,6 +24,8 @@ import { LoginService } from './services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ForgetPasswordService } from './services/forget-password.service';
 import { EditarService } from './services/editar.service';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
+import { PrivacidadComponent } from './components/privacidad/privacidad.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { EditarService } from './services/editar.service';
     HomeComponent,
     MensajesComponent,
     EditarPerfilComponent,
-    CambioContraComponent
+    CambioContraComponent,
+    NotificacionesComponent,
+    PrivacidadComponent
   ],
   imports: [
     BrowserModule,

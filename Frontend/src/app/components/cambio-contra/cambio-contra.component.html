@@ -1,13 +1,13 @@
 <app-header></app-header>
 
-<section>
+<section class="editar-opciones">
     <nav class="nav-lateral">
         <a [routerLink]="['/editar-perfil']">Editar perfil</a>
         <a [routerLink]="['/cambiar-contra']"><strong>Cambiar Contraseña</strong><h3></h3></a>
-        <a href="#">Notificaciones push</a>
-        <a href="#">Privacidad y seguridad</a>
+        <a [routerLink]="['/notificaciones']">Notificaciones push</a>
+        <a [routerLink]="['/privacidad']">Privacidad y seguridad</a>
     </nav>
-    <form class="container" (ngSubmit)="cambiar()" #newUserForm="ngForm">
+    <form class="container" (ngSubmit)="cambiar()" #newContraForm="ngForm">
         <div class="cambiar-datos">
             <div class="input-info">
                 <label>Contraseña antigua</label>
@@ -22,7 +22,7 @@
                 <input>
             </div>
             <div class="opciones">
-                <a [routerLink]="['/forget-password']">¿Has olvidado tu contraseña?</a>
+                <a [routerLink]="['forget-password']">¿Has olvidado tu contraseña?</a>
                 <button>Cambiar contraseña</button>
             </div>
         </div>

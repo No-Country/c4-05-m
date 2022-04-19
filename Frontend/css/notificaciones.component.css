@@ -6,9 +6,10 @@
 .nav-lateral {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     margin-top: 5em;
     margin-left: 3em;
+    border-right: solid 2px #7F1F71;
 }
 
 .nav-lateral a {
@@ -19,6 +20,11 @@
     font-style: normal;
     font-weight: 400;
     font-size: 1.5rem;
+}
+
+h3 {
+    display: inline-block;
+    position: relative;
 }
 
 h3::before {
@@ -36,23 +42,9 @@ h3::before {
 
 .cambiar-datos {
     display: flex;
-    flex-direction: column;
-    padding-top: 7em;
-    border-left: solid 2px #7F1F71;
-    padding-left: 3em;
-}
-
-.input-info{
-    display: flex;
-    align-items: center;
-}
-
-.opciones a{
-    color: #7F1F71;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-decoration: none;
+    height: 92%;
+    padding-top: 4em;
+    padding-left: 5em;
 }
 
 button {
@@ -61,7 +53,40 @@ button {
     border-radius: 10px;
     color: #ffff;
     background-color: #EC46A1;
-    margin-top: 15px;
-    margin-bottom: 16px;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.guardar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 3em;
+}
+
+.notificaciones-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+}
+
+label{
+    margin: 3px;
+    font-size: 20px;
+}
+
+input{
+    width: 30px;
+}
+
+.notificaciones{
+    margin-left: 3em;
 }

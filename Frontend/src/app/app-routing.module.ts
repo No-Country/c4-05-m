@@ -7,6 +7,8 @@ import { GuardadasComponent } from './components/guardadas/guardadas.component';
 import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { CambioContraComponent } from './components/cambio-contra/cambio-contra.component';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
+import { PrivacidadComponent } from './components/privacidad/privacidad.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path: 'cambiar-contra',
     component: CambioContraComponent,
+  },
+  {
+    path: 'notificaciones',
+    component: NotificacionesComponent,
+  },
+  {
+    path: 'privacidad',
+    component: PrivacidadComponent,
   },
 ];
 

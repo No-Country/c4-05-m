@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<section class="editar-opciones">
+    <nav class="nav-lateral">
+        <a [routerLink]="['/editar-perfil']">Editar perfil</a>
+        <a [routerLink]="['/cambiar-contra']">Cambiar Contraseña</a>
+        <a [routerLink]="['/notificaciones']"><strong>Notificaciones push</strong>
+            <h3></h3>
+        </a>
+        <a [routerLink]="['/privacidad']">Privacidad y seguridad</a>
+    </nav>
+    <form class="container" (ngSubmit)="guardar()" #notificacionesForm="ngForm">
+        <div class="cambiar-datos">
+            <section class="notificaciones">
+                <p>Me gusta</p>
+                <div class="notificaciones-info">
+                    <label><input type="checkbox">Activado</label>
+                    <label><input type="checkbox">Desactivado</label>
+                </div>
+                <p>No me gusta</p>
+                <div class="notificaciones-info">
+                    <label><input type="checkbox">Activado</label>
+                    <label><input type="checkbox">Desactivado</label>
+                </div>
+                <p>Comentarios</p>
+                <div class="notificaciones-info">
+                    <label><input type="checkbox">De personas que me siguen</label>
+                    <label><input type="checkbox">Desactivado</label>
+                </div>
+            </section>
+            <section class="notificaciones">
+                <p>Solicitud de seguimiento</p>
+                <div class="notificaciones-info">
+                    <label><input type="checkbox">De todos</label>
+                    <label><input type="checkbox">Desactivado</label>
+                </div>
+                <p>Mensajes</p>
+                <div class="notificaciones-info">
+                    <label><input type="checkbox">De todos</label>
+                    <label><input type="checkbox">Desactivado</label>
+                </div>
+            </section>
+        </div>
+        <div class="guardar">
+            <button>Guardar</button>
+        </div>
+    </form>
+</section>
