@@ -1,0 +1,67 @@
+.editar-opciones {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-lateral {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 5em;
+    margin-left: 3em;
+}
+
+.nav-lateral a {
+    text-decoration: none;
+    padding: 2.2em;
+    color: black;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+h3::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background-color: #EC46A1;
+    top: -0.1em;
+}
+
+h3::before {
+    left: 25px;
+}
+
+.cambiar-datos {
+    display: flex;
+    flex-direction: column;
+    padding-top: 7em;
+    border-left: solid 2px #7F1F71;
+    padding-left: 3em;
+}
+
+.input-info{
+    display: flex;
+    align-items: center;
+}
+
+.opciones a{
+    color: #7F1F71;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+button {
+    width: 20%;
+    padding: 5px;
+    border-radius: 10px;
+    color: #ffff;
+    background-color: #EC46A1;
+    margin-top: 15px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}

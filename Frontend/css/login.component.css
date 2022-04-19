@@ -136,18 +136,6 @@ p {
   color: #7F1F71;
 }
 
-#google-button {
-  width: 273px;
-  text-align: center;
-  padding: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 10px;
-  color: #ffff;
-  background-color: #DB4A39;
-  cursor: pointer;
-}
-
 #login-button {
   text-align: center;
   padding: 8px;
@@ -169,20 +157,6 @@ h4 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.2rem;
-}
-
-#google {
-  width: 138px;
-  height: 44px;
-  margin: 20px;
-  border: 0;
-}
-
-#apple {
-  width: 134px;
-  height: 43px;
-  margin: 20px;
-  border: 0;
 }
 
 hr {

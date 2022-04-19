@@ -17,6 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+import { CambioContraComponent } from './components/cambio-contra/cambio-contra.component';
 
 // SERVICIOS
 import { LoginService } from './services/login.service';
@@ -33,7 +34,8 @@ import { EditarService } from './services/editar.service';
     GuardadasComponent,
     HomeComponent,
     MensajesComponent,
-    EditarPerfilComponent
+    EditarPerfilComponent,
+    CambioContraComponent
   ],
   imports: [
     BrowserModule,

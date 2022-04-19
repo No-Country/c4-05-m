@@ -6,12 +6,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { GuardadasComponent } from './components/guardadas/guardadas.component';
 import { MensajesComponent } from './components/mensajes/mensajes.component';
 import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
+import { CambioContraComponent } from './components/cambio-contra/cambio-contra.component';
 
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'home', component: HomeComponent, data: { animation: 'homePage' } },
-  { path: 'profile/:id', component: ProfileComponent, pathMatch: 'full'},
+  { path: 'user/:id', component: ProfileComponent, pathMatch: 'full'},
   {
     path: 'guardadas',
     component: GuardadasComponent,
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'editar-perfil',
     component: EditarPerfilComponent,
+  },
+  {
+    path: 'cambiar-contra',
+    component: CambioContraComponent,
   },
 ];
 

@@ -3,7 +3,7 @@
   <h1 (click)="goHome()">Fashion Hunter</h1>
   <div class="right" *ngIf="user">
     <p>{{ user.firstName }} <br /><small (click)="logOut()">Cerrar sesión</small></p>
-    <a [routerLink]="['/profile/', user._id]">
+    <a [routerLink]="['/user/', user._id]">
     <img [src]="user.img" class="img-rounded" alt="" />
    </a>
   </div>

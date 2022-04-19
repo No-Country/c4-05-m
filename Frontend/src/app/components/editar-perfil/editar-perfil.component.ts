@@ -10,8 +10,12 @@ import { LoginService } from '../../services/login.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
+  userImg: any;
+  nombreComnpleto: any;
+  lastName: any;
+  email: any;
   user: any;
-  
+
   constructor(
     private httpService: HttpConfigService,
     private loginService: LoginService
@@ -31,16 +35,23 @@ export class EditarPerfilComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
 
-    const eliminar_cuenta = document.getElementById('eliminar-cuenta');
-    const modal_container = document.getElementById('modal-container');
-    const eliminar = document.getElementById('eliminar');
-    
-    eliminar_cuenta?.addEventListener('click', () =>{
-      modal_container?.classList.add('show');
-    });
-    
-    eliminar?.addEventListener('click', () =>{
-      modal_container?.classList.remove('show');
-    });
+
+  guardar() {/*
+    userData.append("userImg", this.userImg);
+    userData.append("firstName", this.firstName);
+    userData.append("lastName", this.lastName);
+    userData.append("username", this.username);
+    userData.append("email", this.email);
+
+    this.httpService
+      .post(`${environment.apiUrl}/user/signup`, userData)
+      .subscribe({
+        next: (resp) => { },
+        error: (error) => { },
+        complete: () => {
+          this.openDialog();
+        }
+      });
+    */}
+}

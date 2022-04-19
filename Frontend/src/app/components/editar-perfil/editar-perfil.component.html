@@ -2,11 +2,12 @@
 
 <section class="editar-opciones">
 <nav class="nav-lateral">
-    <a routerLink="['/editar-perfil']"><strong>Editar perfil</strong><h3></h3></a>
-    <a href="#">Cambiar Contraseña</a>
+    <a [routerLink]="['/editar-perfil']"><strong>Editar perfil</strong><h3></h3></a>
+    <a [routerLink]="['/cambiar-contra']">Cambiar Contraseña</a>
     <a href="#">Notificaciones push</a>
     <a href="#">Privacidad y seguridad</a>
 </nav>
+<form class="container" (ngSubmit)="guardar()" #newUserForm="ngForm">
 <div class="cambiar-datos">
     <div class="input-info">
         <img [src]="user.img">
@@ -50,4 +51,5 @@
         <button>Guardar</button>
     </div>
 </div>
+</form>
 </section>
