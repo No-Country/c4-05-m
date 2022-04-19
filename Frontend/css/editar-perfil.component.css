@@ -106,7 +106,7 @@ label.biografia{
     height: 4em;
 }
 
-#eliminar {
+.opciones a{
     color: #7F1F71;
     font-weight: 700;
     margin-top: 20px;
@@ -129,4 +129,33 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.modal-container{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vh;
+}
+
+.modal{
+    background-color: #ffff;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) ;
+    text-align: center;
+}
+
+.show{
+    pointer-events: auto;
+    opacity: 1;
 }

@@ -18,8 +18,8 @@ export class ProfileComponent implements OnInit {
     private httpService: HttpConfigService,
     private loginService: LoginService) { 
 
-      this.ocupacion = "";
-      this.biografia = "";
+      this.ocupacion = "Periodista de moda";
+      this.biografia = "La moda no sólo existe en los vestidos.";
 
     }
 

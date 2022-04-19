@@ -6,12 +6,12 @@ import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-editar-perfil',
   templateUrl: './editar-perfil.component.html',
-  styleUrls: ['./editar-perfil.component.css']
+  styleUrls: ['../../../../css/editar-perfil.component.css']
 })
 export class EditarPerfilComponent implements OnInit {
 
   user: any;
-
+  
   constructor(
     private httpService: HttpConfigService,
     private loginService: LoginService
@@ -32,3 +32,15 @@ export class EditarPerfilComponent implements OnInit {
   }
 
 }
+
+    const eliminar_cuenta = document.getElementById('eliminar-cuenta');
+    const modal_container = document.getElementById('modal-container');
+    const eliminar = document.getElementById('eliminar');
+    
+    eliminar_cuenta?.addEventListener('click', () =>{
+      modal_container?.classList.add('show');
+    });
+    
+    eliminar?.addEventListener('click', () =>{
+      modal_container?.classList.remove('show');
+    });
