@@ -82,8 +82,8 @@ h1 {
   color: #7F1F71;
   font-size: 65px;
   font-family: "Pacifico";
-  margin-bottom: 0;
-  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-top: 40px;
 }
 .container{
   padding-top: 30px;
@@ -114,7 +114,7 @@ h3::after {
 input {
   padding: 10px;
   margin: 10px;
-  margin-top: 0;
+  margin-top: 10px;
   border: solid 1px #7F1F71;
   border-radius: 10px;
   width: 297px;
@@ -136,18 +136,6 @@ p {
   color: #7F1F71;
 }
 
-#google-button {
-  width: 273px;
-  text-align: center;
-  padding: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 10px;
-  color: #ffff;
-  background-color: #DB4A39;
-  cursor: pointer;
-}
-
 #login-button {
   text-align: center;
   padding: 8px;
@@ -156,8 +144,8 @@ p {
   border-radius: 10px;
   color: #ffff;
   background-color: #EC46A1;
-  margin-top: 15px;
-  margin-bottom: 16px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   cursor: pointer;
 }
 
@@ -167,36 +155,22 @@ p {
 
 h4 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 5px;
   font-size: 1.2rem;
-}
-
-#google {
-  width: 138px;
-  height: 44px;
-  margin: 20px;
-  border: 0;
-}
-
-#apple {
-  width: 134px;
-  height: 43px;
-  margin: 20px;
-  border: 0;
 }
 
 hr {
   border: 1px solid #7F1F71;
   width: 100%;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 35px;
 }
 
 .instagram {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
   font-family: "Source Sans Pro", sans-serif;
 }
 
@@ -204,4 +178,182 @@ hr {
   margin-right: 10px;
 }
 
-/*# sourceMappingURL=login.component.css.map */
+/* RESPONSIVE */
+
+@media screen and (max-width: 800px){
+
+.slider{
+  height: 80%;
+}
+.slider img{
+  width: 17em;
+  height: 23em;
+}
+
+@keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -400%;
+  }
+  75% {
+    margin-left: -400%;
+  }
+  100% {
+    margin-left: -500%;
+  }
+}
+
+h1{
+  font-size: 45px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+p{
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.container{
+  padding-top: 10px;
+}
+
+input{
+  width: 180px;
+  height: 37px;
+  margin-bottom: 10px;
+}
+#login-button{
+  width: 8em;
+  height: 2.5em;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+h3{
+  margin: 30px;
+}
+
+h4{
+  font-size: 1em;
+}
+
+hr{
+  margin-bottom: 30px;
+}
+
+.slider ul{
+  margin: 0;
+  padding: 0;
+  margin-top: 3em;
+}
+
+.galeria{
+  height: 100%;
+}
+.inicioSesion{
+  height: 75%;
+}
+}
+
+@media screen and (max-width: 660px){
+  h3::before{
+    width: 120px;
+    left: -125px;
+  }
+  h3::after{
+    width: 120px;
+    right: -125px;
+  }
+
+  h3{
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 607px){
+  h1{
+    margin: 20px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 527px){
+  h3::before{
+    width: 100px;
+    left: -105px;
+  }
+  h3::after{
+    width: 100px;
+    right: -105px;
+  }
+
+  #login-button{
+    height: 2em;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  h4{
+    margin-top: 0;
+  }
+
+  hr{
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 443px){
+  .inicio{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.2em;
+  }
+
+  .galeria{
+    width: 105%;
+  }
+
+  .slider img{
+    width: 15em;
+    height: 24em;
+  }
+}
+
+@media screen and (max-width: 447px){
+  p{
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 244px){
+  h3{
+    margin-left: 18px;
+  }
+  input{
+    width: 150px;
+    height: 32px;
+    margin-left: 20px;
+  }
+
+  #login-button{
+    margin-left: 10px;
+  }
+  .instagram{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
