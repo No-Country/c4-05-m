@@ -12,4 +12,7 @@ export class PrivacidadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardar(){
+    
+  }
 }
