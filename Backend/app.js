@@ -12,10 +12,7 @@ app.use(morgan("dev"));
 
 // Import Router
 const { userRouter } = require("./routes/user.routes");
-<<<<<<< HEAD
-=======
 const { postRouter } = require("./routes/post.routes");
->>>>>>> 0485d76d5ec94a48acd9d757dbc3a699d7e397d8
 
 const { globalErrorHandler } = require("./middleware/error.middleware");
 

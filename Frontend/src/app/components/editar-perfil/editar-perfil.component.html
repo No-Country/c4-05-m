@@ -4,8 +4,8 @@
 <nav class="nav-lateral">
     <a [routerLink]="['/editar-perfil']"><strong>Editar perfil</strong><h3></h3></a>
     <a [routerLink]="['/cambiar-contra']">Cambiar Contraseña</a>
-    <a href="#">Notificaciones push</a>
-    <a href="#">Privacidad y seguridad</a>
+    <a [routerLink]="['/notificaciones']">Notificaciones push</a>
+    <a [routerLink]="['/privacidad']">Privacidad y seguridad</a>
 </nav>
 <form class="container" (ngSubmit)="guardar()" #newUserForm="ngForm">
 <div class="cambiar-datos">
@@ -16,7 +16,9 @@
     
     <div class="input-info">
         <label class="label-name">Nombre</label>
-        <input class="name" placeholder="{{ user.firstName}} {{ user.lastName }}">
+        <input class="name" placeholder="{{ user.firstName}}">
+        <label >Apellido</label>
+        <input placeholder="{{ user.lastName }}">
             <p>El nombre con el que te conoce 
                 la mayor cantidad de personas, 
             asi podrán encontrarte en la red.</p>
