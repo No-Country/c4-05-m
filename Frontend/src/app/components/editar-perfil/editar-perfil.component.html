@@ -11,43 +11,50 @@
 <div class="cambiar-datos">
     <div class="input-info">
         <img [src]="user.img">
-        <label id="cambiar-foto">Cambiar foto de perfil</label>
+        <a id="cambiar-foto">Cambiar foto de perfil</a>
     </div>
-    
-    <div class="input-info">
-        <label class="label-name">Nombre</label>
-        <input class="name" placeholder="{{ user.firstName}}">
-        <label >Apellido</label>
-        <input placeholder="{{ user.lastName }}">
+    <div class="division-datos">
+        <section class="input-user">
+        <div class="input-info">
+            <label>Nombre</label>
+            <input placeholder="{{ user.firstName}}">
+        </div>
+            <div class="input-info">
+                <label >Apellido</label>
+                <input class="style-apellido" placeholder="{{ user.lastName }}">
+            </div>
+        <div class="input-info">
+            <label>Usuario</label>
+            <input placeholder="@{{ user.username }}">
+        </div>
+        <div class="input-info">
+            <label class="otro-margin">Ocupación</label>
+            <input placeholder="{{ user.occupation }}">
+        </div>
+        <div class="input-info">
+            <label class="otro-margin">Correo
+                <br>electrónico</label>
+            <input placeholder="{{ user.email }}">
+        </div>
+        <div class="input-info">
+            <label class="biografia">Biografía</label>
+            <input id="biografia" placeholder="{{ user.biography }}">
+        </div>
+        </section>
+        <section>
             <p>El nombre con el que te conoce 
                 la mayor cantidad de personas, 
             asi podrán encontrarte en la red.</p>
-    </div>
-    <div class="input-info">
-        <label>Usuario</label>
-        <input placeholder="@{{ user.username }}">
-    </div>
-    <div class="input-info">
-        <label class="otro-margin">Ocupación</label>
-        <input>
-    </div>
-    <div class="input-info">
-        <label class="otro-margin">Correo
-            <br>electrónico</label>
-        <input placeholder="{{ user.email }}">
-    </div>
-    <div class="input-info">
-        <label class="biografia">Biografía</label>
-        <input id="biografia">
+        </section>
     </div>
     <div class="opciones">
-        <a id="eliminar-cuenta">Eliminar cuenta</a>
+        <button id="eliminar-cuenta">Eliminar cuenta</button>
         <div class="modal-container" id="modal-container">
             <div class="modal">
                 <p>¿Estás segur@ que quieres eliminar tu cuenta?</p>
                 <label>Colocar contraseña para confirmar</label>
                 <input>
-                <button id="eliminar">Eliminar</button>
+                <a (click)="eliminarCuenta()" id="eliminar">Eliminar</a>
             </div>
         </div>
         <button>Guardar</button>

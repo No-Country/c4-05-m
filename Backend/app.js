@@ -25,10 +25,7 @@ app.use(helmet());
 app.use(cors());
 
 app.use("/api/v1/user", userRouter);
-<<<<<<< HEAD
-=======
 app.use("/api/v1/posts", postRouter);
->>>>>>> 0485d76d5ec94a48acd9d757dbc3a699d7e397d8
 
 // Middleware for page that not found
 app.use("*", (req, res, next) => {

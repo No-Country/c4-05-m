@@ -39,8 +39,45 @@ h3::before {
     left: 25px;
 }
 
+.cambiar-datos {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5em;
+    border-left: solid 2px #7F1F71;
+    padding-left: 3em;
+}
+
 .input-info{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.7em;
+}
+
+label {
+    text-align: start;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-left: 2em;
+}
+
+input {
+    display: inline-block;
+    width: 40%;
+    height: 2em;
+    padding: 10px;
+    border: solid #7F1F71 1px;
+    border-radius: 10px;
+    margin-right: 4em;
+}
+
+.input-user{
+    width: 210%;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -51,55 +88,22 @@ h3::before {
     border-radius: 50%;
 }
 
-#cambiar-foto{
-    margin-left: 2em;
-}
-
-.cambiar-datos {
+.division-datos{
     display: flex;
-    flex-direction: column;
-    padding-top: 7em;
-    border-left: solid 2px #7F1F71;
-    padding-left: 3em;
-}
-.input-info p{
-    display: block;
-    font-size: 0.8em;
-    text-align: center;
-    margin-bottom: 0;
-    margin-left: 3em;
-    margin-right: 5em;
 }
 
-label {
+#cambiar-foto{
+    margin-right: 20em;
+    display: flex;
+    font-size: 1.3em;
     font-weight: 700;
-    margin-right: 3.1em;
-    margin-left: 10.5em;
 }
 
-input {
-    display: inline-block;
-    width: 30%;
-    height: 2em;
-    margin: 0.5em;
-    padding: 10px;
-    border: solid #7F1F71 1px;
-    border-radius: 10px;
-}
 
-input.name{
-    width: 77%;
-}
-.label-name{
-    margin-right: 2.8em;
-}
-
-label.biografia{
-    margin-right: 2.8em;
-}
-
-.otro-margin{
-    margin-right: 1.7em;
+p{
+    display: block;
+    font-size: 1em;
+    margin-top: 0.5em;
 }
 
 #biografia{
@@ -109,7 +113,6 @@ label.biografia{
 .opciones a{
     color: #7F1F71;
     font-weight: 700;
-    margin-top: 20px;
     margin-bottom: 10px;
     text-decoration: none;
 }
@@ -120,7 +123,7 @@ button {
     border-radius: 10px;
     color: #ffff;
     background-color: #EC46A1;
-    margin-top: 15px;
+    margin-top: 5px;
     margin-bottom: 16px;
     cursor: pointer;
 }

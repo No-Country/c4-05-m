@@ -86,7 +86,7 @@ h1 {
   margin-top: 40px;
 }
 .container{
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 h3 {
@@ -114,7 +114,6 @@ h3::after {
 input {
   padding: 10px;
   margin: 10px;
-  margin-top: 10px;
   border: solid 1px #7F1F71;
   border-radius: 10px;
   width: 297px;
@@ -163,14 +162,29 @@ hr {
   border: 1px solid #7F1F71;
   width: 100%;
   margin: 0;
-  margin-top: 35px;
+}
+
+a{
+  color: #7F1F71;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#forget-password h4{
+  font-weight: 700;
+  margin-right: -5em;
+}
+
+.descargas img{
+  width: 18%;
+  margin: 1em;
 }
 
 .instagram {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
   font-family: "Source Sans Pro", sans-serif;
 }
 

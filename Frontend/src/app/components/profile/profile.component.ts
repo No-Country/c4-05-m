@@ -11,15 +11,15 @@ import { LoginService } from '../../services/login.service';
 export class ProfileComponent implements OnInit {
 
   user: any;
-  ocupacion: string;
-  biografia: string;
+  occupation: string;
+  biography: string;
 
   constructor(
     private httpService: HttpConfigService,
     private loginService: LoginService) { 
 
-      this.ocupacion = "Periodista de moda";
-      this.biografia = "La moda no sólo existe en los vestidos.";
+      this.occupation = "Periodista de moda";
+      this.biography = "La moda no sólo existe en los vestidos.";
 
     }
 

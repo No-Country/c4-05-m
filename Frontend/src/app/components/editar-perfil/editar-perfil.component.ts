@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpConfigService } from '../../services/http-config.service';
 import { LoginService } from '../../services/login.service';
+import { EditarService } from 'src/app/services/editar.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -10,16 +11,34 @@ import { LoginService } from '../../services/login.service';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  userImg: any;
-  nombreComnpleto: any;
-  lastName: any;
-  email: any;
   user: any;
+  userImg: any;
+
+  _id: string;
+  body: {
+  firstName: '',
+  lastName: '',
+  occupation: '',
+  email: '',
+  biography: '',
+  };
 
   constructor(
     private httpService: HttpConfigService,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private editarService: EditarService
   ) {
+  
+    this._id = '';
+
+    this.body = {
+    firstName: "",
+    lastName: "",
+    occupation: "",
+    email: "",
+    biography: ""}
+
+
     const userId = this.loginService.getUserId();
 
     this.httpService.get<any>(`${environment.apiUrl}/user/${userId}`, true)
@@ -33,25 +52,33 @@ export class EditarPerfilComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 
-
-  guardar() {/*
-    userData.append("userImg", this.userImg);
-    userData.append("firstName", this.firstName);
-    userData.append("lastName", this.lastName);
-    userData.append("username", this.username);
-    userData.append("email", this.email);
-
-    this.httpService
-      .post(`${environment.apiUrl}/user/signup`, userData)
+  guardar() {
+    this.editarService.updateData(this._id, this.body)
       .subscribe({
-        next: (resp) => { },
+        next: (resp) => { console.log(resp)},
         error: (error) => { },
         complete: () => {
-          this.openDialog();
+          ;
         }
       });
-    */}
+    }
+
+    eliminarCuenta(){
+
+    }
+
+  deleteUser(){
+    this.editarService.deleteUser(this._id)
+      .subscribe({
+        next: (resp) => { console.log(resp)},
+        error: (error) => { },
+        complete: () => {
+          ;
+        }
+      });
+  }
 }

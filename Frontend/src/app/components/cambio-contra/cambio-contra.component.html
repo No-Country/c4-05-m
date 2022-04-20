@@ -10,20 +10,20 @@
     <form class="container" (ngSubmit)="cambiar()" #newContraForm="ngForm">
         <div class="cambiar-datos">
             <div class="input-info">
-                <label>Contraseña antigua</label>
-                <input>
+                <label for="oldPassword">Contraseña antigua</label>
+                <input type="password" class="form-control" id="oldPassword" formControlName="oldPassword">
             </div>
-            <div class="input-info">
-                <label>Contraseña Nueva</label>
-                <input>
+            <div class="form-group input-info">
+                <label for="newPassword">Contraseña Nueva</label>
+                <input type="password" class="form-control" id="newPassword" formControlName="newPassword">
             </div>
-            <div class="input-info">
-                <label >Confirmar contraseña</label>
-                <input>
+            <div class="form-group input-info">
+                <label for="confirmNewPassword">Confirmar contraseña</label>
+                <input type="password" class="form-control" id="confirmNewPassword" formControlName="confirmNewPassword">
             </div>
             <div class="opciones">
-                <a [routerLink]="['forget-password']">¿Has olvidado tu contraseña?</a>
-                <button>Cambiar contraseña</button>
+                <a [routerLink]="['/forget-password']">¿Has olvidado tu contraseña?</a>
+                <button type="submit">Cambiar contraseña</button>
             </div>
         </div>
         </form>

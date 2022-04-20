@@ -21,11 +21,15 @@
                   <br>
                   <input type="password" autocomplete="off" [(ngModel)]="user.password" name="password" placeholder="Password" required>
                   <br>
+                <a id="forget-password" [routerLink]="['/forget-password']"><h4>¿Olvidaste tu contraseña?</h4></a>
                   <button class="btn btn-success" type="submit" id="login-button" (click)="login()">Iniciar
                       Sesión</button>
               </form>
-              <h4>¿Olvidaste tu contraseña? <a [routerLink]="['/forget-password']">Click aquí</a></h4>
               <h4>¿No tenés cuenta? <a [routerLink]="['/crear-cuenta']">Crear cuenta</a></h4>
+              <div class="descargas">
+                <img src="../../../../assets/images/appleStore.png">
+                <img src="../../../../assets/images/googlePlay.png">
+              </div>
                   <hr/>
                   <div class="instagram">
                   <i class="fab fa-instagram"></i><h4> @fashionhunter_arg</h4>
