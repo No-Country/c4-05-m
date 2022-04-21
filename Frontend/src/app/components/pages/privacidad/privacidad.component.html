@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<section class="editar-opciones">
+  <nav class="nav-lateral">
+    <a [routerLink]="['/editar-perfil']">Editar perfil</a>
+    <a [routerLink]="['/cambiar-contra']">Cambiar Contraseña</a>
+    <a [routerLink]="['/notificaciones']">Notificaciones push</a>
+    <a [routerLink]="['/privacidad']"
+      ><strong>Privacidad y seguridad</strong>
+      <h3></h3>
+    </a>
+  </nav>
+  <form class="container" (ngSubmit)="guardar()" #notificacionesForm="ngForm">
+    <div class="cambiar-datos">
+      <section class="opciones">
+        <h6>Cuenta privada</h6>
+        <div class="settings">
+          <label><input type="radio" />Desactivado</label>
+        </div>
+        <h6>Etiquetas</h6>
+        <div class="settings">
+          <label><input type="checkbox" />Todos</label>
+          <label><input type="checkbox" />Personas que sigues</label>
+          <label><input type="checkbox" />Nadie</label>
+        </div>
+      </section>
+      <section class="opciones">
+        <p>
+          Si tu cuenta es privada, solo las personas que apruebes podrán ver tus
+          fotos
+        </p>
+        <div class="descripcion">
+          <p>
+            Elige quién puede @mencionarte para crear un enlace a tu cuenta en
+            publicaciones, comentarios o pie de página.
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="guardar">
+      <button>Guardar</button>
+    </div>
+  </form>
+</section>

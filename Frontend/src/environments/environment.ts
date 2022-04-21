@@ -5,7 +5,16 @@
 export const environment = {
   production: false,
   apiUrl: "",
-  mapBoxToken: ""
+  mapBoxToken: "",
+  firebaseConfig: {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+  }
 };
 
 /*

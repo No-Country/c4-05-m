@@ -15,6 +15,11 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DescartarPublicacionComponent } from './components/descartar-publicacion/descartar-publicacion.component';
 import { CreandoPublicacionComponent } from './components/creando-publicacion/creando-publicacion.component';
 import { MaterialModule } from '../../modules/material/material.module';
+import { ProfileComponent } from './profile/profile.component';
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { CambioContraComponent } from './cambio-contra/cambio-contra.component';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { PrivacidadComponent } from './privacidad/privacidad.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { MaterialModule } from '../../modules/material/material.module';
     CrearPublicacionComponent,
     CrearPublicacion1Component,
     DescartarPublicacionComponent,
-    CreandoPublicacionComponent
+    CreandoPublicacionComponent,
+    ProfileComponent,
+    EditarPerfilComponent,
+    CambioContraComponent,
+    NotificacionesComponent,
+    PrivacidadComponent
   ],
   imports: [
     CommonModule,

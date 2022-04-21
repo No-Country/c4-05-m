@@ -25,8 +25,18 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
 5. En la carpeta src/environments crear un archivo con el nombre "environment.local.ts" con el siguiente contenido:
     ```sh
     export const environment = {
-        production: false,
-        apiUrl: "http://localhost:3000/api/v1"
+    production: true,
+    apiUrl: "https://fhunter-api.herokuapp.com/api/v1",
+    mapBoxToken: "pk.eyJ1IjoibmF6YXJlbm9iYXN0YW56byIsImEiOiJjbDE5eTBxcjgwMWtlM2Zwamh3cWZ6Nmd0In0.QoZkJmffJebZGfpVaNDTBA",
+    firebaseConfig: {
+        apiKey: "AIzaSyCyI8o4CjBi9Jr6FBwQWJKP9qLmzedriVY",
+        authDomain: "fashion-hunter-27637.firebaseapp.com",
+        projectId: "fashion-hunter-27637",
+        storageBucket: "fashion-hunter-27637.appspot.com",
+        messagingSenderId: "859770928823",
+        appId: "1:859770928823:web:4ede28b7499b6b30845732",
+        measurementId: "G-1Z5WD9ZLD5"
+      }
     };
     ```
 6. Correr el siguiente npm script (no utilizar npm start, ni ng serve):
@@ -37,3 +47,18 @@ Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-
     ```sh
     http://localhost:4200/
     ```
+## Deploy
+
+1. ```sh
+    npm run build
+    ```
+2. ```sh
+    git add .
+    ```
+3. ```sh
+    git commit -m "My feature"
+    ```
+4. ```sh
+    git push
+    ```
+5. Esperar unos minutos, e ingresar a https://fashion-hunter-27637.web.app/ 

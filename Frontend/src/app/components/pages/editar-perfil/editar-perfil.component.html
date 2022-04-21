@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<section class="editar-opciones">
+  <nav class="nav-lateral">
+    <a [routerLink]="['/editar-perfil']"
+      ><strong>Editar perfil</strong>
+      <h3></h3
+    ></a>
+    <a [routerLink]="['/cambiar-contra']">Cambiar Contraseña</a>
+    <a href="#">Notificaciones push</a>
+    <a href="#">Privacidad y seguridad</a>
+  </nav>
+  <form class="container" (ngSubmit)="guardar()" #newUserForm="ngForm">
+    <div class="cambiar-datos">
+      <div class="input-info">
+        <img [src]="user?.img" />
+        <label id="cambiar-foto">Cambiar foto de perfil</label>
+      </div>
+
+      <div class="input-info">
+        <label class="label-name">Nombre</label>
+        <input
+          class="name"
+          placeholder="{{ user?.firstName }} {{ user?.lastName }}"
+          autocomplete="off"
+        />
+        <p>
+          El nombre con el que te conoce la mayor cantidad de personas, asi
+          podrán encontrarte en la red.
+        </p>
+      </div>
+      <div class="input-info">
+        <label>Usuario</label>
+        <input
+          class="username"
+          placeholder="@{{ user?.username }}"
+          autocomplete="off"
+        />
+      </div>
+      <div class="input-info">
+        <label class="otro-margin">Ocupación</label>
+        <input autocomplete="off" />
+      </div>
+      <div class="input-info">
+        <label class="otro-margin">Correo <br />electrónico</label>
+        <input placeholder="{{ user?.email }}" autocomplete="off" />
+      </div>
+      <div class="input-info">
+        <label class="biografia">Biografía</label>
+        <input id="biografia" autocomplete="off" />
+      </div>
+      <div class="opciones">
+        <a id="eliminar-cuenta">Eliminar cuenta</a>
+        <div class="modal-container" id="modal-container">
+          <div class="modal">
+            <p>¿Estás segur@ que quieres eliminar tu cuenta?</p>
+            <label>Colocar contraseña para confirmar</label>
+            <input autocomplete="off" />
+            <button id="eliminar">Eliminar</button>
+          </div>
+        </div>
+        <button>Guardar</button>
+      </div>
+    </div>
+  </form>
+</section>

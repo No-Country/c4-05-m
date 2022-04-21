@@ -1,0 +1,187 @@
+.editar-opciones {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-lateral {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-top: 5em;
+  margin-left: 3em;
+  border-right: solid 2px #7f1f71;
+}
+
+.nav-lateral a {
+  text-decoration: none;
+  padding: 2.2em;
+  color: black;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+h3 {
+  display: inline-block;
+  position: relative;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 5px;
+  background-color: #ec46a1;
+  top: -0.1em;
+}
+
+h3::before {
+  left: 25px;
+}
+
+.cambiar-datos {
+  display: flex;
+  height: 92%;
+  padding-top: 4em;
+  padding-left: 5em;
+}
+
+button {
+  width: 20%;
+  padding: 5px;
+  border-radius: 10px;
+  color: #ffff;
+  background-color: #ec46a1;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.guardar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 3em;
+}
+
+.notificaciones-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+}
+
+label {
+  margin: 3px;
+  font-size: 20px;
+}
+
+input {
+  width: 30px;
+}
+
+.notificaciones {
+  margin-left: 3em;
+}
+
+@media only screen and (max-width: 1366px) and (min-width: 1024px) {
+  .editar-opciones {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-lateral {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-top: 5em;
+    margin-left: 3em;
+    border-right: solid 2px #7f1f71;
+  }
+
+  .nav-lateral a {
+    text-decoration: none;
+    padding: 2.2em;
+    color: black;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    display: inline-block;
+    position: relative;
+  }
+
+  h3::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background-color: #ec46a1;
+    top: 0.5em;
+  }
+
+  h3::before {
+    left: 25px;
+  }
+
+  .cambiar-datos {
+    display: flex;
+    height: 92%;
+    padding-top: 4em;
+    padding-left: 5em;
+  }
+
+  button {
+    width: 20%;
+    padding: 5px;
+    border-radius: 10px;
+    color: #ffff;
+    background-color: #ec46a1;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .guardar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0;
+    margin-top: 3em;
+  }
+
+  .notificaciones-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2em;
+  }
+
+  label {
+    margin: 3px;
+    font-size: 15px;
+  }
+
+  input {
+    width: 30px;
+  }
+
+  .notificaciones {
+    margin-left: 3em;
+  }
+}

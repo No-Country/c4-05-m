@@ -47,6 +47,7 @@
   width: 55px;
   height: 55px;
   border-radius: 100%;
+  cursor: pointer;
 }
 h1 {
   display: inline;

@@ -19,18 +19,15 @@ export class CrearPublicacionComponent implements OnInit {
   ngOnInit(): void {}
 
   onSelect(event: any) {
-    console.log(event);
     if (this.foto.length > 1) {
       this.foto = [];
     }
     this.foto.push(...event.addedFiles);
-    console.log(this.foto);
 
     this.openDialog1();
   }
 
   onRemove(event: any) {
-    console.log(event);
 
     this.foto.splice(this.foto.indexOf(event), 1);
   }
@@ -45,7 +42,6 @@ export class CrearPublicacionComponent implements OnInit {
       const archivoCapturado = event.target.files[0];
       this.foto.push(archivoCapturado);
 
-      console.log(this.foto);
 
       this.openDialog1();
 
@@ -63,9 +59,6 @@ export class CrearPublicacionComponent implements OnInit {
 
     this.dialogRef.close();
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

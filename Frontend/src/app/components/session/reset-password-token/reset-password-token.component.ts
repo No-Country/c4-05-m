@@ -19,14 +19,8 @@ export class ResetPasswordTokenComponent implements OnInit {
         this.cookies.set('emailToken', resp['params']['emailToken']);
         this.router.navigateByUrl('/reset-password');
       },
-      error: (error: any) => {
-        console.log(error);
-
-      },
-      complete: () => {
-        console.log('Complete');
-
-      }
+      error: (error: any) => {},
+      complete: () => {}
     })
   }
 

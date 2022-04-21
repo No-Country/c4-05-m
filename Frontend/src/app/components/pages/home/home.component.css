@@ -1,4 +1,12 @@
 /* POSTS */
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+}
 .posts-container {
   position: relative;
   top: 5rem;
@@ -6,7 +14,7 @@
   display: flex;
   justify-content: center;
   width: 33.24rem;
-  border: 2px solid var(--other-color-3);
+  /* border: 2px solid var(--other-color-3); */
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 10px;
@@ -25,6 +33,7 @@
   height: 55px;
   object-fit: cover;
   margin-right: 5px;
+  border-radius: 100%;
 }
 .user {
   display: inline;

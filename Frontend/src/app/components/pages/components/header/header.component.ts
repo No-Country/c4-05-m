@@ -12,13 +12,24 @@ import { LoginService } from '../../../../services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() user: any;
+  user: any;
 
   constructor(
     private router: Router,
     private httpService: HttpConfigService,
     private loginService: LoginService
-  ) { }
+  ) {
+    const userId = this.loginService.getUserId();
+
+    this.httpService.get<any>(`${environment.apiUrl}/user/${userId}`, true)
+      .subscribe({
+        next: (resp: any) => {
+          this.user = resp.data.user[0];
+        },
+        error: error => { },
+        complete: () => { }
+      })
+  }
 
   ngOnInit(): void {
   }
@@ -29,6 +40,10 @@ export class HeaderComponent implements OnInit {
 
   logOut(){
     this.loginService.logOut();
+  }
+
+  viewProfile() {
+    this.router.navigate(['/profile']);
   }
 
 }

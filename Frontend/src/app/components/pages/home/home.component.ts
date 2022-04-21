@@ -6,6 +6,8 @@ import { delay, of, tap } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { CrearPublicacionComponent } from '../components/crear-publicacion/crear-publicacion.component';
 import { LoginService } from '../../../services/login.service';
+import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-home',
@@ -16,13 +18,17 @@ export class HomeComponent implements OnInit {
   suggestions = [];
   currentUser!: any;
   oculto = true;
+  posts!: Array<any>;
+  moment: any = moment;
 
   constructor(
     private _title: Title,
     private httpService: HttpConfigService,
     private loginService: LoginService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {
+    moment.locale('es');
     this._title.setTitle('Fashion Hunter - Home');
 
     const observablePattern = of(true).pipe(
@@ -41,14 +47,23 @@ export class HomeComponent implements OnInit {
     });
 
     const userId = this.loginService.getUserId();
-    this.httpService.get<any>(`${environment.apiUrl}/user/${userId}`, true)
+    this.httpService
+      .get<any>(`${environment.apiUrl}/user/${userId}`, true)
       .subscribe({
         next: (resp: any) => {
           this.currentUser = resp.data.user;
         },
-        error: error => { },
-        complete: () => { }
+        error: (error) => {},
+        complete: () => {},
       });
+
+    this.listarPosts().subscribe({
+      next: (posts: any) => {
+        this.posts = posts.data.resolvedPost;
+      },
+      error: (error: any) => {},
+      complete: () => {},
+    });
   }
 
   ngOnInit(): void {}
@@ -63,7 +78,9 @@ export class HomeComponent implements OnInit {
             return user.username !== this.currentUser.username;
           });
           if (resultSuggestion.length > 5) {
-            this.suggestions = resultSuggestion.slice(resultSuggestion.length -5);
+            this.suggestions = resultSuggestion.slice(
+              resultSuggestion.length - 5
+            );
           } else {
             this.suggestions = resultSuggestion;
           }
@@ -76,12 +93,17 @@ export class HomeComponent implements OnInit {
   crearPublicacion() {
     const dialogRef = this.dialog.open(CrearPublicacionComponent, {
       disableClose: false,
-      data: {user: this.currentUser}
+      data: { user: this.currentUser[0] },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
+  }
+
+  editarPerfil() {
+    this.router.navigate(['/editar-perfil']);
+  }
+
+  listarPosts() {
+    return this.httpService.get(`${environment.apiUrl}/posts`, true);
   }
 }

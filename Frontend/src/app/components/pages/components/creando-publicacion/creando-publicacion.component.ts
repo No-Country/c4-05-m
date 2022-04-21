@@ -29,14 +29,10 @@ export class CreandoPublicacionComponent implements OnInit {
       .post(`${environment.apiUrl}/posts`, formData, true)
       .subscribe({
         next: (resp) => {
-          console.log(resp);
           this.progress = 100;
         },
-        error: (error) => {
-          console.log(error);
-        },
+        error: (error) => {},
         complete: () => {
-          console.log('complete');
           this.message = 'Listo!';
         },
       });
@@ -46,7 +42,8 @@ export class CreandoPublicacionComponent implements OnInit {
   }
 
   goHome() {
-    this.dialog.closeAll();
+    // this.dialog.closeAll();
+    window.location.reload();
   }
 
 }

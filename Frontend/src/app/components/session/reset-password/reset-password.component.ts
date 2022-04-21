@@ -39,23 +39,13 @@ export class ResetPasswordComponent implements OnInit {
       this.forgetPassService.resetPassword(strRaw)
       .subscribe({
         next: (resp: any) => {
-          console.log(resp);
           this.dialog.open(Dialog2Component, {disableClose: true});
 
         },
-        error: (error: any) => {
-          console.log(error);
-
-        },
-        complete: () => {
-          console.log('complete');
-
-        }
+        error: (error: any) => {},
+        complete: () => {}
       });
-    } else {
-      console.log('Las contraseñas no coinciden');
-
-    }
+    } else {}
   }
 
 }

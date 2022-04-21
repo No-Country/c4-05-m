@@ -3,6 +3,6 @@
   <h1 (click)="goHome()" class="logo">Fashion Hunter</h1>
   <div class="right" *ngIf="user">
     <p>{{ user.firstName }} <br /><small (click)="logOut()">Cerrar sesión</small></p>
-    <img [src]="user.img" class="img-rounded" alt="" />
+    <img [src]="user.img" class="img-rounded" alt="" (click)="viewProfile()" />
   </div>
 </div>

@@ -29,12 +29,10 @@ export class CrearPublicacion1Component implements OnInit {
     private httpService: HttpConfigService
   ) {
     this.extraerBase64(data.foto).then((imagen: any) => {
-      console.log(imagen);
 
       this.previsualizacion = imagen.base;
     });
 
-    console.log(data.user.user);
     this.currentUser = data.user.user;
   }
 
@@ -71,10 +69,7 @@ export class CrearPublicacion1Component implements OnInit {
 
     this.dialogRef.close();
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   locate() {
@@ -88,21 +83,14 @@ export class CrearPublicacion1Component implements OnInit {
 
         fetch(apiUrl)
           .then((resp) => {
-            // console.log(resp);
             return resp.json();
           })
           .then((result) => {
-            // console.log(result);
-            // console.log(result.features[0].place_name);
             this.location = result.features[0].place_name;
           })
-          .catch((error) => {
-            console.log(error);
-          });
+          .catch((error) => {});
       },
-      (error) => {
-        console.log(error);
-      }
+      (error) => {}
     );
   }
 
@@ -112,15 +100,10 @@ export class CrearPublicacion1Component implements OnInit {
       data: { user: this.currentUser },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   publicar() {
-    console.log(this.data.foto);
-    console.log(this.description);
 
     const dialogRef = this.dialog.open(CreandoPublicacionComponent, {
       disableClose: false,
@@ -131,10 +114,7 @@ export class CrearPublicacion1Component implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe((result) => {});
 
 
   }

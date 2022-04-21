@@ -41,7 +41,7 @@ export class MensajesComponent implements OnInit {
       .get<any>(`${environment.apiUrl}/user/${userId}`, true)
       .subscribe({
         next: (resp: any) => {
-          this.user = resp.data.user;
+          this.user = resp.data.user[0];
         },
         error: (error) => {},
         complete: () => {},
@@ -78,7 +78,7 @@ export class MensajesComponent implements OnInit {
       .subscribe({
         next: (resp: any) => {
 
-          this.userImg = resp.data.user.img;
+          this.userImg = resp.data.user[0].img;
           const theMessage = {
             message,
             userImg: this.userImg,
