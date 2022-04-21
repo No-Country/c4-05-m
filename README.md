@@ -5,10 +5,11 @@ Es una red social de moda, donde podés ver y guardar Outfits de tus contactos, 
 
 ## ¿Que tecnologías usamos?
 
+- Javascript
 - Typescript
 - Angular 13
 - Html
-- Css
+- Css/Sass
 - Node Js
 - MongoDB
 - Mongoose
