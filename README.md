@@ -27,4 +27,4 @@ Es una red social de moda, donde podés ver y guardar Outfits de tus contactos, 
 ## Deploy con
 
 - [Backend - Heroku] -> https://fhunter-api.herokuapp.com/
-- [Frontend] -> https://fashion-hunter-27637.web.app/
+- [Frontend - Firebase] -> https://fashion-hunter-27637.web.app/
